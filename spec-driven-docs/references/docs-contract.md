@@ -2,6 +2,8 @@
 
 Use this contract for the target project's `docs/` directory.
 
+The top-level documentation is intentionally PMBoK-lite: it should capture business case, stakeholders, scope, constraints, roadmap, and control points without turning into heavyweight process paperwork. The feature spec format follows the numbered software-development pattern from the provided PDF reference.
+
 ## Folder layout
 
 ```text
@@ -10,6 +12,7 @@ docs/
   project-passport.md
   product-overview.md
   roadmap.md
+  architecture.md
   modules/
     <module-id>.md
   versions/
@@ -34,15 +37,23 @@ docs/
 
 ## File purpose
 
-- `docs/README.md`: entry point, navigation, and current planning rules.
-- `docs/project-passport.md`: project identity, goals, non-goals, stakeholders, constraints, KPIs.
-- `docs/product-overview.md`: business flows, personas, value proposition, core experience.
-- `docs/roadmap.md`: versions, delivery intent, scope boundaries, dependency notes.
-- `docs/modules/<module-id>.md`: module responsibility, user value, feature map, open questions.
-- `docs/versions/<version>/README.md`: what this version is trying to achieve and how success is measured.
-- `docs/versions/<version>/features/<feature-id>.md`: business spec for one feature.
+- `docs/README.md`: entry point, navigation, current planning baseline, and update workflow.
+- `docs/project-passport.md`: PMBoK-lite charter for the project: business case, objectives, scope, stakeholders, assumptions, constraints, risks, and governance basics.
+- `docs/product-overview.md`: PMBoK-aligned product description: business context, current vs target process, user groups, capabilities, and integration touchpoints.
+- `docs/roadmap.md`: release roadmap with business goals, scope boundaries, milestones, dependencies, and exit criteria.
+- `docs/architecture.md`: minimal reference architecture of the whole application and the exact responsibility boundary of the user's repository.
+- `docs/modules/<module-id>.md`: module responsibility, user value, feature map, dependencies, and repository touchpoints.
+- `docs/versions/<version>/README.md`: what this version is trying to achieve, in scope, out of scope, and how success is measured.
+- `docs/versions/<version>/features/<feature-id>.md`: business spec for one feature using the numbered feature pattern from `references/feature-spec-pattern.md`.
 - `docs/versions/<version>/iterations/<packet-id>.md`: one implementation-ready packet for agents.
 - `docs/_meta/*.json`: compact indexes generated from Markdown for other skills and trackers.
+
+## Top-level documentation rules
+
+- Keep `project-passport.md`, `product-overview.md`, and `roadmap.md` aligned to PMBoK-lite concepts: business case, objectives, stakeholders, scope, assumptions, constraints, milestones, risks, and dependencies.
+- Keep `architecture.md` minimal and decision-oriented. It should explain the application landscape, major containers or modules, integration points, and which part is represented by the current repository.
+- If the repository covers only part of a broader application, state that explicitly instead of pretending the repo is the whole system.
+- When facts are unknown, mark them as `unknown` or list them under `## Open questions`.
 
 ## Metadata bullets
 
@@ -81,11 +92,42 @@ Use comma-separated lists for `Depends on`. Use `none` when there are no depende
 - Every feature should link back to:
   - its module doc
   - its version README
+  - the architecture doc when architecture or repository ownership matters
   - relevant packets
 - Every packet should link to:
   - the feature spec
+  - the architecture doc
   - the roadmap
   - any module or passport files needed for context
+
+## Feature structure
+
+Feature specs should use the numbered sections from `references/feature-spec-pattern.md`:
+
+1. incoming request
+2. feature summary
+3. business case
+4. current and target state
+5. functional requirements
+6. non-functional requirements
+7. technical considerations
+8. acceptance criteria
+9. risks and dependencies
+10. resources and rollout notes
+11. references and appendices
+
+Do not drop sections silently. If a section is currently unknown, mark it explicitly.
+
+## Architecture minimum
+
+`docs/architecture.md` should cover at least:
+
+- system context and product boundary
+- major application parts or containers
+- key integrations and data boundaries
+- repository responsibility and non-responsibility
+- deployment or runtime assumptions that affect delivery
+- architecture risks and open questions
 
 ## Status model
 

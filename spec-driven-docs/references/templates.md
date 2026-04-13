@@ -23,17 +23,23 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## One-line summary
 
-## Problem
+## Business case
 
-## Target users
+## Objectives and success metrics
 
-## Business goals
+## Stakeholders and decision model
 
-## Non-goals
+## Scope
+
+## Out of scope
+
+## Assumptions
 
 ## Constraints
 
-## Success metrics
+## Milestone snapshot
+
+## Risks and dependencies
 
 ## Open questions
 ```
@@ -45,11 +51,17 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Product promise
 
-## Primary personas
+## User groups and stakeholders
+
+## Current process and pain points
+
+## Target process and value
 
 ## Core user flows
 
-## Functional map
+## Capability map
+
+## Integration touchpoints
 
 ## Risks and assumptions
 
@@ -63,29 +75,71 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Planning assumptions
 
+## Delivery model and priorities
+
 ## MVP
 
-### Goal
+### Business goal
 
-### Included modules
+### Scope
 
-### Key features
+### Milestones
+
+### Dependencies
 
 ### Exit criteria
 
 ## V1
 
-### Goal
+### Business goal
 
-### Expansion
+### Scope
+
+### Milestones
+
+### Dependencies
+
+### Exit criteria
 
 ## V2
 
-### Goal
+### Business goal
 
-### Expansion
+### Scope
+
+### Milestones
+
+### Dependencies
+
+### Exit criteria
 
 ## Cross-version dependencies
+
+## Resource and risk notes
+
+## Open questions
+```
+
+## `docs/architecture.md`
+
+```md
+# Architecture Overview
+
+## System context
+
+## Reference component map
+
+## Key integrations
+
+## Data and ownership boundaries
+
+## Repository responsibility
+
+## Repository non-responsibility
+
+## Runtime and deployment assumptions
+
+## Architecture risks and open questions
 ```
 
 ## `docs/modules/<module-id>.md`
@@ -104,6 +158,8 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Dependencies
 
+## Repository touchpoints
+
 ## Open questions
 ```
 
@@ -112,13 +168,17 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 ```md
 # Version: <version>
 
-## Goal
+## Business goal
 
-## In scope
+## Scope
 
 ## Out of scope
 
+## Milestones
+
 ## Dependencies
+
+## Exit criteria
 
 ## Ready features
 
@@ -137,23 +197,54 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 - Priority: medium
 - Depends on: none
 
-## Business outcome
+## 0. Incoming request
+- Source: unknown
+- Request summary: unknown
+- Initiator: unknown
+- Stakeholders: unknown
+- Target date: unknown
+- Decision owner: unknown
 
-## User problem
+## 1. Feature summary
 
-## Scope
+## 2. Business case
 
-## Out of scope
+### 2.1 Business goals
 
-## User flows
+### 2.2 Problem statement
 
-## Acceptance signals
+### 2.3 Expected result
 
-## Risks and assumptions
+## 3. Current and target state
 
-## References
+### 3.1 As is
+
+### 3.2 To be
+
+## 4. Functional requirements
+
+### 4.1 User stories
+
+### 4.2 Functional scenarios
+
+### 4.3 Data and content requirements
+
+### 4.4 UX and presentation notes
+
+## 5. Non-functional requirements
+
+## 6. Technical considerations
+
+## 7. Acceptance criteria
+
+## 8. Risks and dependencies
+
+## 9. Resources and rollout notes
+
+## 10. References and appendices
 - [Module doc](../../../../modules/<module-id>.md)
 - [Version doc](../README.md)
+- [Architecture doc](../../../architecture.md)
 
 ## Open questions
 ```
@@ -177,12 +268,15 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Inputs and dependencies
 
+## Architecture and repository touchpoints
+
 ## Delivery notes for the implementing agent
 
 ## Done when
 
 ## References
 - [Feature spec](../features/<feature-id>.md)
+- [Architecture doc](../../../architecture.md)
 - [Roadmap](../../../roadmap.md)
 - [Project passport](../../../project-passport.md)
 ```

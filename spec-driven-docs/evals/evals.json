@@ -5,11 +5,12 @@
       "id": 1,
       "name": "bootstrap-project-docs",
       "prompt": "У меня новый B2B SaaS проект для агентств недвижимости. Документации почти нет. Нужна структура docs/, паспорт проекта, обзор продукта, roadmap на MVP, v1 и v2, а потом подготовь первые крупные задачи для фичи загрузки объектов и для фичи CRM-воронки.",
-      "expected_output": "Скилл должен создать или предложить создать базовую структуру docs/, заполнить ключевые базовые документы бизнес-контекстом и подготовить implementation packets для первых двух фич.",
+      "expected_output": "Скилл должен создать или предложить создать базовую структуру docs/, заполнить ключевые базовые документы в PMBoK-lite формате, добавить минимальный architecture reference и подготовить implementation packets для первых двух фич.",
       "files": [],
       "expectations": [
         "The output creates a `docs/README.md` entry point and a `docs/project-passport.md` file.",
         "The roadmap covers `MVP`, `V1`, and `V2` as separate planning horizons.",
+        "The output includes a minimal `docs/architecture.md` that explains the application context and the repository boundary.",
         "The first implementation packets focus on the requested product features rather than code details."
       ]
     },
@@ -17,10 +18,11 @@
       "id": 2,
       "name": "normalize-existing-docs",
       "prompt": "В проекте уже есть заметки в README, backlog.md и пару разрозненных файлов в docs/. Приведи это к одному формату: модули, roadmap по версиям, отдельные feature specs и компактный JSON-индекс для других агентов.",
-      "expected_output": "Скилл должен нормализовать существующую документацию в единый контракт docs/, не потеряв бизнес-смысл и создав machine-readable индексы.",
+      "expected_output": "Скилл должен нормализовать существующую документацию в единый контракт docs/, не потеряв бизнес-смысл, выровнять верхний уровень под PMBoK-lite, добавить architecture reference и создать machine-readable индексы.",
       "files": [],
       "expectations": [
         "The output includes a normalized `docs/roadmap.md` plus module-level documentation under `docs/modules/`.",
+        "The output includes PMBoK-lite top-level project docs rather than loose ad hoc notes.",
         "The output generates compact JSON indexes under `docs/_meta/`.",
         "The output preserves business context in Markdown instead of collapsing everything into JSON."
       ]
@@ -29,10 +31,11 @@
       "id": 3,
       "name": "add-feature-and-split-packets",
       "prompt": "Добавь в документацию новую фичу 'совместное редактирование спецификаций' для версии v1, проверь пересечения с текущими требованиями и разбей ее на 3-4 крупных пакета для последующей реализации агентами.",
-      "expected_output": "Скилл должен обновить roadmap и module docs, создать или обновить feature spec, выявить конфликты и подготовить implementation packets.",
+      "expected_output": "Скилл должен обновить roadmap и module docs, создать или обновить feature spec в формальном шаблоне по образцу software-development brief, выявить конфликты и подготовить implementation packets.",
       "files": [],
       "expectations": [
         "The feature spec is placed under `docs/versions/v1/features/`.",
+        "The feature spec uses numbered sections for incoming request, business case, current/target state, requirements, acceptance, and risks.",
         "The output contains 3-4 implementation packets for the new feature under `docs/versions/v1/iterations/`.",
         "The feature addition updates the roadmap or module docs to reflect the new version placement."
       ]

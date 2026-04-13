@@ -56,6 +56,10 @@ def build_packet_body(packet_id: str, title: str, feature_path: Path, feature_me
         - Review the parent feature spec before implementation.
         - Check dependencies listed in the feature metadata.
 
+        ## Architecture and repository touchpoints
+        - Confirm whether this packet changes repository responsibility or integration behavior.
+        - Cross-check `docs/architecture.md` before implementation when the feature touches external systems.
+
         ## Delivery notes for the implementing agent
         - Prefer business behavior that can be validated from the feature spec.
         - If new questions appear, record them back in the feature doc.
@@ -67,6 +71,7 @@ def build_packet_body(packet_id: str, title: str, feature_path: Path, feature_me
 
         ## References
         - [Feature spec]({relative_feature.as_posix()})
+        - [Architecture doc](../../../architecture.md)
         - [Roadmap](../../../roadmap.md)
         - [Project passport](../../../project-passport.md)
         """

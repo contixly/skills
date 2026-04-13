@@ -27,6 +27,7 @@ def docs_readme(project_name: str) -> str:
         - `project-passport.md`: product identity, goals, and constraints
         - `product-overview.md`: user value and key flows
         - `roadmap.md`: version scope and delivery intent
+        - `architecture.md`: reference architecture and repository scope
         - `modules/`: module-level responsibilities
         - `versions/`: version-specific feature specs and implementation packets
         - `_meta/`: generated indexes for automation and tracker sync
@@ -50,22 +51,31 @@ def project_passport(project_name: str) -> str:
         ## One-line summary
         {project_name} is being documented for spec-driven delivery.
 
-        ## Problem
+        ## Business case
         TBD
 
-        ## Target users
+        ## Objectives and success metrics
         TBD
 
-        ## Business goals
+        ## Stakeholders and decision model
         TBD
 
-        ## Non-goals
+        ## Scope
+        TBD
+
+        ## Out of scope
+        TBD
+
+        ## Assumptions
         TBD
 
         ## Constraints
         TBD
 
-        ## Success metrics
+        ## Milestone snapshot
+        TBD
+
+        ## Risks and dependencies
         TBD
 
         ## Open questions
@@ -82,13 +92,22 @@ def product_overview() -> str:
         ## Product promise
         TBD
 
-        ## Primary personas
+        ## User groups and stakeholders
+        TBD
+
+        ## Current process and pain points
+        TBD
+
+        ## Target process and value
         TBD
 
         ## Core user flows
         TBD
 
-        ## Functional map
+        ## Capability map
+        TBD
+
+        ## Integration touchpoints
         TBD
 
         ## Risks and assumptions
@@ -109,13 +128,16 @@ def roadmap(versions: list[str]) -> str:
                 f"""
                 ## {heading}
 
-                ### Goal
+                ### Business goal
                 TBD
 
-                ### Included modules
+                ### Scope
                 TBD
 
-                ### Key features
+                ### Milestones
+                TBD
+
+                ### Dependencies
                 TBD
 
                 ### Exit criteria
@@ -131,12 +153,53 @@ def roadmap(versions: list[str]) -> str:
         ## Planning assumptions
         - Version scope is business-first and may be refined as details become clearer.
 
+        ## Delivery model and priorities
+        TBD
+
         """
     ) + "\n\n".join(sections) + dedent(
         """
 
         ## Cross-version dependencies
         TBD
+
+        ## Resource and risk notes
+        TBD
+
+        ## Open questions
+        - Which delivery assumptions still need validation?
+        """
+    )
+
+
+def architecture_overview() -> str:
+    return dedent(
+        """
+        # Architecture Overview
+
+        ## System context
+        TBD
+
+        ## Reference component map
+        TBD
+
+        ## Key integrations
+        TBD
+
+        ## Data and ownership boundaries
+        TBD
+
+        ## Repository responsibility
+        TBD
+
+        ## Repository non-responsibility
+        TBD
+
+        ## Runtime and deployment assumptions
+        TBD
+
+        ## Architecture risks and open questions
+        - Which surrounding systems are still outside this repository's visibility?
         """
     )
 
@@ -162,6 +225,9 @@ def module_doc(module_id: str) -> str:
         ## Dependencies
         TBD
 
+        ## Repository touchpoints
+        TBD
+
         ## Open questions
         - Which features belong to this module first?
         """
@@ -174,16 +240,22 @@ def version_readme(version: str) -> str:
         f"""
         # Version: {heading}
 
-        ## Goal
+        ## Business goal
         TBD
 
-        ## In scope
+        ## Scope
         TBD
 
         ## Out of scope
         TBD
 
+        ## Milestones
+        TBD
+
         ## Dependencies
+        TBD
+
+        ## Exit criteria
         TBD
 
         ## Ready features
@@ -225,6 +297,7 @@ def main() -> None:
     write_if_missing(docs_dir / "project-passport.md", project_passport(args.project_name), force)
     write_if_missing(docs_dir / "product-overview.md", product_overview(), force)
     write_if_missing(docs_dir / "roadmap.md", roadmap(args.versions), force)
+    write_if_missing(docs_dir / "architecture.md", architecture_overview(), force)
 
     for module_id in args.modules:
         write_if_missing(docs_dir / "modules" / f"{module_id}.md", module_doc(module_id), force)
