@@ -4,9 +4,14 @@
     {
       "id": 1,
       "name": "bootstrap-project-docs",
-      "prompt": "У меня новый B2B SaaS проект для агентств недвижимости. Документации почти нет. Нужна структура docs/, паспорт проекта, обзор продукта, roadmap на MVP, v1 и v2, а потом подготовь первые крупные задачи для фичи загрузки объектов и для фичи CRM-воронки.",
+      "prompt": "Есть тестовый репозиторий в `evals/fixtures/bootstrap-estate-crm/`. Документации почти нет, `docs/` ещё не создан. Нужно на основе содержимого репозитория предложить или создать структуру docs/, оформить верхний уровень в PMBoK-lite формате, явно описать архитектурный контекст и границу ответственности этого репозитория, а потом подготовить первые крупные пакеты работ для фич загрузки объектов и CRM-воронки.",
       "expected_output": "Скилл должен создать или предложить создать базовую структуру docs/, заполнить ключевые базовые документы в PMBoK-lite формате, добавить минимальный architecture reference и подготовить implementation packets для первых двух фич.",
-      "files": [],
+      "files": [
+        "evals/fixtures/bootstrap-estate-crm/README.md",
+        "evals/fixtures/bootstrap-estate-crm/apps/web/package.json",
+        "evals/fixtures/bootstrap-estate-crm/apps/api/README.md",
+        "evals/fixtures/bootstrap-estate-crm/workers/importer/README.md"
+      ],
       "expectations": [
         "The output creates a `docs/README.md` entry point and a `docs/project-passport.md` file.",
         "The roadmap covers `MVP`, `V1`, and `V2` as separate planning horizons.",
@@ -17,9 +22,16 @@
     {
       "id": 2,
       "name": "normalize-existing-docs",
-      "prompt": "В проекте уже есть заметки в README, backlog.md и пару разрозненных файлов в docs/. Приведи это к одному формату: модули, roadmap по версиям, отдельные feature specs и компактный JSON-индекс для других агентов.",
+      "prompt": "Есть тестовый репозиторий в `evals/fixtures/normalize-spec-hub/`. В нём уже лежат заметки в README, backlog.md и несколько разрозненных файлов в docs/. Приведи это к одному формату: PMBoK-lite верхний уровень, modules, roadmap по версиям, architecture reference с границей репозитория, отдельные feature specs и компактный JSON-индекс для других агентов.",
       "expected_output": "Скилл должен нормализовать существующую документацию в единый контракт docs/, не потеряв бизнес-смысл, выровнять верхний уровень под PMBoK-lite, добавить architecture reference и создать machine-readable индексы.",
-      "files": [],
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
       "expectations": [
         "The output includes a normalized `docs/roadmap.md` plus module-level documentation under `docs/modules/`.",
         "The output includes PMBoK-lite top-level project docs rather than loose ad hoc notes.",
@@ -30,9 +42,16 @@
     {
       "id": 3,
       "name": "add-feature-and-split-packets",
-      "prompt": "Добавь в документацию новую фичу 'совместное редактирование спецификаций' для версии v1, проверь пересечения с текущими требованиями и разбей ее на 3-4 крупных пакета для последующей реализации агентами.",
+      "prompt": "Возьми тестовый репозиторий `evals/fixtures/normalize-spec-hub/`. Добавь в документацию новую фичу `совместное редактирование спецификаций` для версии v1, проверь пересечения с текущими требованиями и разложи её на 3-4 крупных пакета для реализации агентами. Feature spec оформи по формальному numbered-паттерну software-development brief и проверь, нужно ли обновить architecture reference.",
       "expected_output": "Скилл должен обновить roadmap и module docs, создать или обновить feature spec в формальном шаблоне по образцу software-development brief, выявить конфликты и подготовить implementation packets.",
-      "files": [],
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
       "expectations": [
         "The feature spec is placed under `docs/versions/v1/features/`.",
         "The feature spec uses numbered sections for incoming request, business case, current/target state, requirements, acceptance, and risks.",
