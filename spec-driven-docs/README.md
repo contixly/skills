@@ -10,6 +10,7 @@ Build AI-ready project documentation in `docs/` for spec-driven development, roa
 - normalize scattered notes into one consistent `docs/` contract
 - keep roadmap, modules, features, and iterations aligned
 - prepare implementation packets for delivery agents
+- use role-based subagents for discovery, architecture analysis, drafting, and review
 - export compact JSON indexes for downstream automation and tracker sync
 
 ## Quick Start
@@ -43,6 +44,22 @@ Use this skill when you need to:
 - maintain documentation as the source of execution context
 - plan feature delivery in small, spec-driven iterations
 
+## How It Works With Subagents
+
+When subagents are available, the skill follows a role-based workflow inspired by `obra/superpowers`.
+
+- `analyst` gathers business context, scope, gaps, and affected docs
+- `architect` gathers repository boundary, integrations, and technical constraints
+- `developer` creates or updates the documentation
+- `reviewer` checks consistency, packet readiness, and downstream usability
+
+Default flow:
+
+1. analyst and architect gather context
+2. developer drafts or updates the docs
+3. reviewer validates the result
+4. developer fixes issues if review fails
+
 ## Bootstrap Docs From Zero
 
 This is the main initialization scenario.
@@ -66,7 +83,7 @@ python3 scripts/bootstrap_docs.py --docs-dir <project>/docs --project-name "<Pro
 4. Fill the top-level PMBoK-lite docs with real business context.
 5. Write a minimal `docs/architecture.md` that explains the wider system and the repository boundary.
 6. Write `docs/current-state.md` so agents can see what is implemented, in progress, ready next, or still unknown.
-7. Create the first module docs, feature specs, and implementation packets.
+7. Create the first module docs, feature specs, and implementation packets, then pass them through review.
 8. Export machine-readable indexes with:
 
 ```bash
@@ -93,6 +110,7 @@ python3 scripts/sync_docs_index.py --docs-dir <project>/docs
 - explicit roadmap ownership and version placement
 - clear repository responsibility boundaries
 - implementation packets sized for incremental delivery
+- lightweight technical reality gathered before packet drafting
 - stable JSON exports for other skills and automations
 
 ## Design Principles
