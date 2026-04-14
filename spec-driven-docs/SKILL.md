@@ -1,11 +1,6 @@
 ---
 name: spec-driven-docs
 description: Build and maintain project documentation in `docs/` for spec-driven application development with AI agents. Use this whenever the user wants to start project docs from scratch, normalize existing product documentation, define roadmap versions such as MVP, v1, and v2, map modules and features, split features into implementation packets or user stories, align project docs to PMBoK-style structure, describe a feature in a formal business-spec pattern, or expose task and status data for other skills and trackers. Trigger even when the user talks about project context for agents, AI-ready docs, documentation-first delivery, feature planning, architecture context, or preparing the next implementation iterations without explicitly naming documentation.
-compatibility:
-  tools:
-    - shell
-  dependencies:
-    - python3
 ---
 
 # Spec-Driven Docs
@@ -36,6 +31,7 @@ This skill turns `docs/` into a clear source of truth for product intent, roadma
 3. Read `references/pmbok-lite.md` when filling top-level project docs.
 4. Read `references/feature-spec-pattern.md` when adding or rewriting feature specs.
 5. Use the scripts in `scripts/` instead of hand-rolling repetitive scaffolding.
+6. Treat `docs/current-state.md` as the human-readable source of truth for branch state and `docs/_meta/delivery-state.json` as the compact export for other skills.
 
 ## Operating modes
 
@@ -53,9 +49,10 @@ Use this when `docs/` is missing or the user wants a fresh documentation baselin
 2. Run `python3 scripts/bootstrap_docs.py --docs-dir <project>/docs --project-name "<name>"`.
 3. Fill the generated Markdown with concrete project context using the PMBoK-lite structure from `references/pmbok-lite.md`.
 4. Create `docs/architecture.md` with the application context, main parts, integrations, and repository responsibility boundary.
-5. Create the first module specs and feature specs using the numbered feature structure from `references/feature-spec-pattern.md`.
-6. Generate the first implementation packets for the nearest delivery scope.
-7. Run `python3 scripts/sync_docs_index.py --docs-dir <project>/docs`.
+5. Fill `docs/current-state.md` with the current branch or stream, what is already implemented, what is in progress, and what should happen next.
+6. Create the first module specs and feature specs using the numbered feature structure from `references/feature-spec-pattern.md`.
+7. Generate the first implementation packets for the nearest delivery scope.
+8. Run `python3 scripts/sync_docs_index.py --docs-dir <project>/docs`.
 
 ### 2. Normalize existing documentation
 
@@ -66,6 +63,7 @@ Use this when the project already has notes, briefs, backlog files, or fragmente
 3. Convert scattered feature notes into:
    - roadmap versions in `docs/roadmap.md`
    - minimal architecture context in `docs/architecture.md`
+   - branch delivery state in `docs/current-state.md`
    - module specs in `docs/modules/`
    - feature specs in `docs/versions/<version>/features/`
 4. If requirements conflict, call out the conflict directly in the relevant file under `## Open questions` instead of hiding it.
@@ -79,13 +77,14 @@ Use this when the user introduces a new feature, changes scope, or reassigns a f
 2. Update the module doc, roadmap, and feature spec together.
 3. Use the numbered feature structure from `references/feature-spec-pattern.md` for the feature spec.
 4. Update `docs/architecture.md` if the feature changes integration points, data ownership, or repository responsibility.
-5. Check for collisions:
+5. Update `docs/current-state.md` if the feature changes what is already implemented, what is in progress, or what should be prepared next.
+6. Check for collisions:
    - overlapping user flows
    - duplicated business outcomes
    - conflicting version promises
    - packets that are now obsolete or out of order
-6. If a change invalidates earlier packets, update their status to `superseded` or `blocked` and explain why.
-7. Re-run the sync script.
+7. If a change invalidates earlier packets, update their status to `superseded` or `blocked` and explain why.
+8. Re-run the sync script.
 
 ### 4. Prepare implementation packets
 
@@ -102,6 +101,7 @@ Implementation packets are the handoff surface for delivery agents.
    - which docs to read next
 5. Use `python3 scripts/build_task_packet.py` when the packet mostly follows the standard template.
 6. Keep packet instructions short enough to scan, but specific enough to implement.
+7. Reflect newly ready packets in `docs/current-state.md` if this affects next implementation sequencing.
 
 ### 5. Sync for other skills and trackers
 
@@ -113,10 +113,16 @@ After any meaningful doc update:
 2. Treat these files as the public machine-readable interface:
    - `docs/_meta/feature-index.json`
    - `docs/_meta/task-board.json`
+   - `docs/_meta/delivery-state.json`
 3. When another skill needs to update documentation, it should:
    - edit the relevant Markdown files first
    - keep metadata bullets intact
+   - update `docs/current-state.md` when branch-level execution state changes
    - re-run the sync script
+4. When another skill needs to consume documentation state, it should:
+   - read the specific Markdown docs needed for business context
+   - use `_meta/*.json` for compact indexing and tracker sync
+   - treat `delivery-state.json` as the stable summary of current branch reality
 
 ## Interview guidance
 
@@ -140,6 +146,7 @@ If the user is short on time, make conservative defaults and mark assumptions in
 - Keep top-level docs aligned to PMBoK-lite concepts rather than ad hoc notes.
 - Keep feature specs in the numbered pattern from `references/feature-spec-pattern.md`.
 - Keep `docs/architecture.md` minimal but always explicit about the repository boundary within the whole application.
+- Keep `docs/current-state.md` terse, current, and branch-specific.
 - When moving a feature between versions, update all inbound references in the affected packet files.
 
 ## Suggested execution flow
@@ -152,6 +159,7 @@ If the user is short on time, make conservative defaults and mark assumptions in
 6. Report:
    - what changed
    - unresolved questions or conflicts
+   - what the current branch now implements or still leaves unknown
    - which packets are ready for agent implementation
 
 ## Output expectations
@@ -161,8 +169,9 @@ When you finish a documentation pass, leave the project with:
 - a readable `docs/` structure aligned to the contract
 - PMBoK-lite top-level docs for project context and roadmap intent
 - a minimal architecture document that explains the application and the repository's place in it
+- a current-state document that explains what this branch already contains, what is in progress, and what is next
 - roadmap and module ownership that match the feature files
 - at least the next implementation-ready packets if the user asked for planning
-- fresh JSON indexes for downstream automation
+- fresh JSON indexes for downstream automation and tracker sync
 
 If you cannot complete the structure because core business context is missing, create the minimal skeleton, record the gaps in `## Open questions`, and say exactly what is still unknown.

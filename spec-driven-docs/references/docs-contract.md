@@ -13,6 +13,7 @@ docs/
   product-overview.md
   roadmap.md
   architecture.md
+  current-state.md
   modules/
     <module-id>.md
   versions/
@@ -33,6 +34,7 @@ docs/
   _meta/
     feature-index.json
     task-board.json
+    delivery-state.json
 ```
 
 ## File purpose
@@ -42,16 +44,20 @@ docs/
 - `docs/product-overview.md`: PMBoK-aligned product description: business context, current vs target process, user groups, capabilities, and integration touchpoints.
 - `docs/roadmap.md`: release roadmap with business goals, scope boundaries, milestones, dependencies, and exit criteria.
 - `docs/architecture.md`: minimal reference architecture of the whole application and the exact responsibility boundary of the user's repository.
+- `docs/current-state.md`: branch-facing delivery snapshot that states what is already implemented, what is in progress, what is ready next, and what is still unknown.
 - `docs/modules/<module-id>.md`: module responsibility, user value, feature map, dependencies, and repository touchpoints.
 - `docs/versions/<version>/README.md`: what this version is trying to achieve, in scope, out of scope, and how success is measured.
 - `docs/versions/<version>/features/<feature-id>.md`: business spec for one feature using the numbered feature pattern from `references/feature-spec-pattern.md`.
 - `docs/versions/<version>/iterations/<packet-id>.md`: one implementation-ready packet for agents.
-- `docs/_meta/*.json`: compact indexes generated from Markdown for other skills and trackers.
+- `docs/_meta/feature-index.json`: compact feature registry for other skills and trackers.
+- `docs/_meta/task-board.json`: compact packet registry for other skills and trackers.
+- `docs/_meta/delivery-state.json`: compact branch-state export derived from `current-state.md` plus feature and packet statuses.
 
 ## Top-level documentation rules
 
 - Keep `project-passport.md`, `product-overview.md`, and `roadmap.md` aligned to PMBoK-lite concepts: business case, objectives, stakeholders, scope, assumptions, constraints, milestones, risks, and dependencies.
 - Keep `architecture.md` minimal and decision-oriented. It should explain the application landscape, major containers or modules, integration points, and which part is represented by the current repository.
+- Keep `current-state.md` explicit about the current branch or working stream. If branch facts are unknown, write `unknown` instead of guessing.
 - If the repository covers only part of a broader application, state that explicitly instead of pretending the repo is the whole system.
 - When facts are unknown, mark them as `unknown` or list them under `## Open questions`.
 
@@ -86,6 +92,20 @@ Feature and packet files should start with a stable metadata block directly unde
 
 Use comma-separated lists for `Depends on`. Use `none` when there are no dependencies.
 
+### Current-state metadata
+
+```md
+# Current Delivery State
+
+- Branch: feature/shared-editing
+- Updated at: 2026-04-14
+- Implemented versions: mvp
+- In-progress features: spec-collaboration
+- Ready packets: v1-collab-02, v1-collab-03
+```
+
+Use comma-separated lists for implemented versions, in-progress features, and ready packets. Use `none` or `unknown` if the value is not confirmed.
+
 ## Linking rules
 
 - Link docs to other docs, not to code, unless the code location is essential for a constraint.
@@ -104,17 +124,17 @@ Use comma-separated lists for `Depends on`. Use `none` when there are no depende
 
 Feature specs should use the numbered sections from `references/feature-spec-pattern.md`:
 
-1. incoming request
-2. feature summary
-3. business case
-4. current and target state
-5. functional requirements
-6. non-functional requirements
-7. technical considerations
-8. acceptance criteria
-9. risks and dependencies
-10. resources and rollout notes
-11. references and appendices
+0. incoming request
+1. feature summary
+2. business case
+3. current and target state
+4. functional requirements
+5. non-functional requirements
+6. technical considerations
+7. acceptance criteria
+8. risks and dependencies
+9. resources and rollout notes
+10. references and appendices
 
 Do not drop sections silently. If a section is currently unknown, mark it explicitly.
 

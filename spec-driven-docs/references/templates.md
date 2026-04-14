@@ -242,11 +242,33 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 ## 9. Resources and rollout notes
 
 ## 10. References and appendices
-- [Module doc](../../../../modules/<module-id>.md)
+- [Module doc](../../../modules/<module-id>.md)
 - [Version doc](../README.md)
 - [Architecture doc](../../../architecture.md)
 
 ## Open questions
+```
+
+## `docs/current-state.md`
+
+```md
+# Current Delivery State
+
+- Branch: unknown
+- Updated at: unknown
+- Implemented versions: none
+- In-progress features: none
+- Ready packets: none
+
+## Summary
+
+## What is already implemented in this branch
+
+## What is currently in progress
+
+## What should be implemented next
+
+## Risks and open questions
 ```
 
 ## Packet template
@@ -287,3 +309,4 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 - If a section is unknown, state that clearly instead of leaving placeholder noise.
 - Prefer lists over dense paragraphs for scope and acceptance.
 - If a packet can be parallelized, say so explicitly in `## Delivery notes for the implementing agent`.
+- Keep `current-state.md` short and decision-oriented so another agent can understand branch reality in under a minute.

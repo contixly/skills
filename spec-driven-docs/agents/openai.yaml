@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec-Driven Docs"
+  short_description: "Build AI-ready project docs and delivery packets"
+  default_prompt: "Use $spec-driven-docs to bootstrap or normalize docs/ for roadmap planning and agent handoff."

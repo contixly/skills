@@ -14,6 +14,21 @@ def normalize_key(key: str) -> str:
     return key.strip().lower().replace(" ", "_")
 
 
+def parse_title(path: Path, expected_prefix: str) -> str:
+    with path.open(encoding="utf-8") as handle:
+        for line in handle:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            if not stripped.startswith("# "):
+                break
+            title = stripped[2:].strip()
+            if title.lower().startswith(expected_prefix.lower()):
+                return title[len(expected_prefix) :].strip()
+            return title
+    return path.stem
+
+
 def parse_metadata(path: Path) -> dict[str, str]:
     metadata: dict[str, str] = {}
     with path.open(encoding="utf-8") as handle:
@@ -36,6 +51,14 @@ def split_dependencies(raw: str | None) -> list[str]:
     return [item.strip() for item in raw.split(",") if item.strip()]
 
 
+def split_values(raw: str | None) -> list[str]:
+    if not raw:
+        return []
+    if raw.lower() in {"none", "unknown"}:
+        return []
+    return [item.strip() for item in raw.split(",") if item.strip()]
+
+
 def collect_features(docs_dir: Path) -> list[dict[str, object]]:
     features: list[dict[str, object]] = []
     for path in sorted((docs_dir / "versions").glob("*/features/*.md")):
@@ -45,7 +68,7 @@ def collect_features(docs_dir: Path) -> list[dict[str, object]]:
         features.append(
             {
                 "id": metadata["id"],
-                "name": path.stem,
+                "title": parse_title(path, "Feature:"),
                 "module": metadata.get("module", "unknown"),
                 "version": metadata.get("version", path.parent.parent.name),
                 "status": metadata.get("status", "unknown"),
@@ -66,7 +89,7 @@ def collect_tasks(docs_dir: Path) -> list[dict[str, object]]:
         tasks.append(
             {
                 "id": metadata["id"],
-                "title": path.stem,
+                "title": parse_title(path, "Packet:"),
                 "feature": metadata.get("feature", "unknown"),
                 "version": metadata.get("version", path.parent.parent.name),
                 "status": metadata.get("status", "unknown"),
@@ -75,6 +98,51 @@ def collect_tasks(docs_dir: Path) -> list[dict[str, object]]:
             }
         )
     return tasks
+
+
+def collect_delivery_state(
+    docs_dir: Path,
+    features: list[dict[str, object]],
+    tasks: list[dict[str, object]],
+) -> dict[str, object]:
+    state_path = docs_dir / "current-state.md"
+    metadata = parse_metadata(state_path) if state_path.exists() else {}
+
+    implemented_versions = split_values(metadata.get("implemented_versions"))
+    if not implemented_versions:
+        implemented_versions = sorted(
+            {
+                str(feature["version"])
+                for feature in features
+                if feature.get("status") == "done"
+            }
+        )
+
+    in_progress_features = split_values(metadata.get("in_progress_features"))
+    if not in_progress_features:
+        in_progress_features = [
+            str(feature["id"])
+            for feature in features
+            if feature.get("status") == "in-progress"
+        ]
+
+    ready_packets = split_values(metadata.get("ready_packets"))
+    if not ready_packets:
+        ready_packets = [
+            str(task["id"])
+            for task in tasks
+            if task.get("status") == "ready"
+        ]
+
+    return {
+        "branch": metadata.get("branch", "unknown"),
+        "updated_at": metadata.get("updated_at", "unknown"),
+        "implemented_versions": implemented_versions,
+        "in_progress_features": in_progress_features,
+        "ready_packets": ready_packets,
+        "path": str(state_path.relative_to(docs_dir)) if state_path.exists() else "current-state.md",
+        "generated_from": str(docs_dir),
+    }
 
 
 def parse_args() -> argparse.Namespace:
@@ -91,12 +159,14 @@ def main() -> None:
 
     features = collect_features(docs_dir)
     tasks = collect_tasks(docs_dir)
+    delivery_state = collect_delivery_state(docs_dir, features, tasks)
 
     feature_index = {"features": features, "generated_from": str(docs_dir)}
     task_board = {"tasks": tasks, "generated_from": str(docs_dir)}
 
     (meta_dir / "feature-index.json").write_text(json.dumps(feature_index, indent=2) + "\n", encoding="utf-8")
     (meta_dir / "task-board.json").write_text(json.dumps(task_board, indent=2) + "\n", encoding="utf-8")
+    (meta_dir / "delivery-state.json").write_text(json.dumps(delivery_state, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -28,6 +28,7 @@ def docs_readme(project_name: str) -> str:
         - `product-overview.md`: user value and key flows
         - `roadmap.md`: version scope and delivery intent
         - `architecture.md`: reference architecture and repository scope
+        - `current-state.md`: what the current branch already implements, what is in progress, and what is next
         - `modules/`: module-level responsibilities
         - `versions/`: version-specific feature specs and implementation packets
         - `_meta/`: generated indexes for automation and tracker sync
@@ -38,7 +39,7 @@ def docs_readme(project_name: str) -> str:
         ## Update workflow
         1. Update Markdown docs.
         2. Run `python3 scripts/sync_docs_index.py --docs-dir docs`.
-        3. Use `_meta` JSON files for automation consumers.
+        3. Use `_meta/feature-index.json`, `_meta/task-board.json`, and `_meta/delivery-state.json` for automation consumers.
         """
     )
 
@@ -204,6 +205,35 @@ def architecture_overview() -> str:
     )
 
 
+def current_state() -> str:
+    return dedent(
+        """
+        # Current Delivery State
+
+        - Branch: unknown
+        - Updated at: unknown
+        - Implemented versions: none
+        - In-progress features: none
+        - Ready packets: none
+
+        ## Summary
+        TBD
+
+        ## What is already implemented in this branch
+        TBD
+
+        ## What is currently in progress
+        TBD
+
+        ## What should be implemented next
+        TBD
+
+        ## Risks and open questions
+        - Which feature or packet status still needs confirmation from the team?
+        """
+    )
+
+
 def module_doc(module_id: str) -> str:
     title = module_id.replace("-", " ").title()
     return dedent(
@@ -298,6 +328,7 @@ def main() -> None:
     write_if_missing(docs_dir / "product-overview.md", product_overview(), force)
     write_if_missing(docs_dir / "roadmap.md", roadmap(args.versions), force)
     write_if_missing(docs_dir / "architecture.md", architecture_overview(), force)
+    write_if_missing(docs_dir / "current-state.md", current_state(), force)
 
     for module_id in args.modules:
         write_if_missing(docs_dir / "modules" / f"{module_id}.md", module_doc(module_id), force)
@@ -311,6 +342,21 @@ def main() -> None:
     meta_dir.mkdir(parents=True, exist_ok=True)
     write_if_missing(meta_dir / "feature-index.json", json.dumps({"features": []}, indent=2), force)
     write_if_missing(meta_dir / "task-board.json", json.dumps({"tasks": []}, indent=2), force)
+    write_if_missing(
+        meta_dir / "delivery-state.json",
+        json.dumps(
+            {
+                "branch": "unknown",
+                "updated_at": "unknown",
+                "implemented_versions": [],
+                "in_progress_features": [],
+                "ready_packets": [],
+                "path": "current-state.md",
+            },
+            indent=2,
+        ),
+        force,
+    )
 
 
 if __name__ == "__main__":
