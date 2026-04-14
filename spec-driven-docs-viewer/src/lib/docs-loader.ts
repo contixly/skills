@@ -66,7 +66,7 @@ async function collectPacketMarkdownPaths(workspaceRoot: string): Promise<string
 async function hasStalePacketDocs(workspaceRoot: string, taskPaths: string[]): Promise<boolean> {
   const packetMarkdownPaths = await collectPacketMarkdownPaths(workspaceRoot);
   if (packetMarkdownPaths.length === 0) {
-    return false;
+    return taskPaths.length > 0;
   }
 
   const indexedPacketPaths = new Set(taskPaths);

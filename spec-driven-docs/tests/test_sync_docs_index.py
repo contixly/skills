@@ -4,7 +4,9 @@ import json
 import subprocess
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
+
+from scripts.sync_docs_index import to_posix_relative_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +14,14 @@ SYNC_SCRIPT = ROOT / "scripts" / "sync_docs_index.py"
 
 
 class SyncDocsIndexTests(unittest.TestCase):
+    def test_to_posix_relative_path_normalizes_windows_separators(self) -> None:
+        base = PureWindowsPath(r"C:\repo\docs")
+        packet = PureWindowsPath(r"C:\repo\docs\versions\v1\iterations\v1-smart-sync-01.md")
+        self.assertEqual(
+            to_posix_relative_path(packet, base),
+            "versions/v1/iterations/v1-smart-sync-01.md",
+        )
+
     def test_exports_titles_and_delivery_state(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             docs_dir = Path(tmp) / "docs"
@@ -95,6 +105,52 @@ class SyncDocsIndexTests(unittest.TestCase):
             self.assertEqual(feature_index["generated_from"], "docs")
             self.assertEqual(task_board["generated_from"], "docs")
             self.assertEqual(delivery_state["generated_from"], "docs")
+
+    def test_accepts_hyphenated_current_state_metadata_keys(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            docs_dir = Path(tmp) / "docs"
+            (docs_dir / "versions" / "v1" / "features").mkdir(parents=True)
+            (docs_dir / "versions" / "v1" / "iterations").mkdir(parents=True)
+
+            (docs_dir / "current-state.md").write_text(
+                "\n".join(
+                    [
+                        "# Current Delivery State",
+                        "",
+                        "- Branch: feature/spec-docs",
+                        "- Updated at: 2026-04-14",
+                        "- In-progress features: docs-sync",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            (docs_dir / "versions" / "v1" / "features" / "docs-sync.md").write_text(
+                "\n".join(
+                    [
+                        "# Feature: Docs Sync",
+                        "",
+                        "- ID: docs-sync",
+                        "- Module: docs",
+                        "- Version: v1",
+                        "- Status: planned",
+                        "- Priority: medium",
+                        "- Depends on: none",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            subprocess.run(
+                ["python3", str(SYNC_SCRIPT), "--docs-dir", str(docs_dir)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            delivery_state = json.loads((docs_dir / "_meta" / "delivery-state.json").read_text(encoding="utf-8"))
+            self.assertEqual(delivery_state["in_progress_features"], ["docs-sync"])
 
 
 if __name__ == "__main__":

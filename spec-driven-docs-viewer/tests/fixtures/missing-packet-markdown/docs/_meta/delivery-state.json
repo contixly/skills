@@ -1,0 +1,11 @@
+{
+  "branch": "feature/missing-packet-markdown",
+  "updated_at": "2026-04-14",
+  "implemented_versions": [],
+  "in_progress_features": [],
+  "ready_packets": [
+    "v1-smart-sync-01"
+  ],
+  "path": "current-state.md",
+  "generated_from": "docs"
+}

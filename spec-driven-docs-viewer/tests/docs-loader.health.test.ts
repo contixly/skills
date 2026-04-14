@@ -26,4 +26,13 @@ describe("loadWorkspaceDocs health", () => {
       "Packet markdown exists but docs/_meta indexes are incomplete or stale."
     );
   });
+
+  test("reports stale-meta warning when packet index entries exist without markdown files", async () => {
+    const workspace = await loadWorkspaceDocs(fixturePath("missing-packet-markdown"));
+
+    expect(workspace.health.level).toBe("warning");
+    expect(workspace.health.messages).toContain(
+      "Packet markdown exists but docs/_meta indexes are incomplete or stale."
+    );
+  });
 });

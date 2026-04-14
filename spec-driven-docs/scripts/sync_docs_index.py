@@ -5,13 +5,17 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from pathlib import Path
+from pathlib import Path, PurePath
 
-META_PATTERN = re.compile(r"^- ([A-Za-z ]+):\s*(.+?)\s*$")
+META_PATTERN = re.compile(r"^- ([A-Za-z][A-Za-z -]*):\s*(.+?)\s*$")
 
 
 def normalize_key(key: str) -> str:
-    return key.strip().lower().replace(" ", "_")
+    return key.strip().lower().replace("-", " ").replace(" ", "_")
+
+
+def to_posix_relative_path(path: PurePath, base: PurePath) -> str:
+    return path.relative_to(base).as_posix()
 
 
 def display_path(path: Path) -> str:
@@ -83,7 +87,7 @@ def collect_features(docs_dir: Path) -> list[dict[str, object]]:
                 "status": metadata.get("status", "unknown"),
                 "priority": metadata.get("priority", "unknown"),
                 "depends_on": split_dependencies(metadata.get("depends_on")),
-                "path": str(path.relative_to(docs_dir)),
+                "path": to_posix_relative_path(path, docs_dir),
             }
         )
     return features
@@ -103,7 +107,7 @@ def collect_tasks(docs_dir: Path) -> list[dict[str, object]]:
                 "version": metadata.get("version", path.parent.parent.name),
                 "status": metadata.get("status", "unknown"),
                 "owner": metadata.get("owner", "unassigned"),
-                "path": str(path.relative_to(docs_dir)),
+                "path": to_posix_relative_path(path, docs_dir),
             }
         )
     return tasks
@@ -149,7 +153,7 @@ def collect_delivery_state(
         "implemented_versions": implemented_versions,
         "in_progress_features": in_progress_features,
         "ready_packets": ready_packets,
-        "path": str(state_path.relative_to(docs_dir)) if state_path.exists() else "current-state.md",
+        "path": to_posix_relative_path(state_path, docs_dir) if state_path.exists() else "current-state.md",
         "generated_from": display_path(docs_dir),
     }
 
