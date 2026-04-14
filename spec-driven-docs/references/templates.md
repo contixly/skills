@@ -198,6 +198,7 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 - Depends on: none
 
 ## 0. Incoming request
+
 - Source: unknown
 - Request summary: unknown
 - Initiator: unknown
@@ -207,46 +208,79 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## 1. Feature summary
 
+TBD
+
 ## 2. Business case
 
 ### 2.1 Business goals
 
+TBD
+
 ### 2.2 Problem statement
 
+TBD
+
 ### 2.3 Expected result
+
+TBD
 
 ## 3. Current and target state
 
 ### 3.1 As is
 
+TBD
+
 ### 3.2 To be
+
+TBD
 
 ## 4. Functional requirements
 
 ### 4.1 User stories
 
+TBD
+
 ### 4.2 Functional scenarios
+
+TBD
 
 ### 4.3 Data and content requirements
 
+TBD
+
 ### 4.4 UX and presentation notes
+
+TBD
 
 ## 5. Non-functional requirements
 
+TBD
+
 ## 6. Technical considerations
+
+TBD
 
 ## 7. Acceptance criteria
 
+TBD
+
 ## 8. Risks and dependencies
+
+TBD
 
 ## 9. Resources and rollout notes
 
+TBD
+
 ## 10. References and appendices
+
 - [Module doc](../../../modules/<module-id>.md)
 - [Version doc](../README.md)
 - [Architecture doc](../../../architecture.md)
 
 ## Open questions
+
+- TBD
 ```
 
 ## `docs/current-state.md`
@@ -284,19 +318,34 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Objective
 
+TBD
+
 ## Scope in this packet
+
+- TBD
 
 ## Out of scope
 
+- TBD
+
 ## Inputs and dependencies
+
+- TBD
 
 ## Architecture and repository touchpoints
 
+- TBD
+
 ## Delivery notes for the implementing agent
+
+- TBD
 
 ## Done when
 
+- TBD
+
 ## After implementation
+
 - Update this packet status to `in-progress`, `done`, `blocked`, or `superseded`.
 - Update the parent feature status if delivery state changed.
 - Update `docs/current-state.md`.
@@ -305,6 +354,7 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 - Example prompt: `Use $spec-driven-docs to sync documentation after implementing packet <packet-id>. Update packet and feature statuses, refresh current-state, update architecture if needed, and regenerate docs/_meta indexes.`
 
 ## References
+
 - [Feature spec](../features/<feature-id>.md)
 - [Architecture doc](../../../architecture.md)
 - [Roadmap](../../../roadmap.md)

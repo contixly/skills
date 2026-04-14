@@ -58,7 +58,10 @@ class PacketContractTests(unittest.TestCase):
                 encoding="utf-8"
             )
 
+            self.assertTrue(packet.startswith("# Packet: Presence and Session Coordination"))
             self.assertIn("## After implementation", packet)
+            self.assertIn("## Objective\n\nDeliver one coherent slice", packet)
+            self.assertIn("## After implementation\n\nWhen this packet is implemented", packet)
             self.assertIn("Use $spec-driven-docs to sync documentation after implementing packet", packet)
             self.assertIn("Update this packet status", packet)
             self.assertIn("Update `docs/current-state.md`", packet)

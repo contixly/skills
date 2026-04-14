@@ -8,22 +8,28 @@ from pathlib import Path
 from textwrap import dedent
 
 
+def md(text: str) -> str:
+    return dedent(text).strip()
+
+
 def write_if_missing(path: Path, content: str, force: bool) -> None:
     if path.exists() and not force:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(content.rstrip() + "\n", encoding="utf-8")
+    path.write_text(content.strip() + "\n", encoding="utf-8")
 
 
 def docs_readme(project_name: str) -> str:
-    return dedent(
+    return md(
         f"""
         # {project_name} Docs
 
         ## What this folder is for
+
         This folder stores business-facing project documentation for spec-driven delivery with AI agents.
 
         ## How to navigate it
+
         - `project-passport.md`: product identity, goals, and constraints
         - `product-overview.md`: user value and key flows
         - `roadmap.md`: version scope and delivery intent
@@ -34,9 +40,11 @@ def docs_readme(project_name: str) -> str:
         - `_meta/`: generated indexes for automation and tracker sync
 
         ## Current planning baseline
+
         Fill this section after the first documentation interview.
 
         ## Update workflow
+
         1. Update Markdown docs.
         2. Run `python3 scripts/sync_docs_index.py --docs-dir docs`.
         3. Use `_meta/feature-index.json`, `_meta/task-board.json`, and `_meta/delivery-state.json` for automation consumers.
@@ -45,76 +53,96 @@ def docs_readme(project_name: str) -> str:
 
 
 def project_passport(project_name: str) -> str:
-    return dedent(
+    return md(
         f"""
         # Project Passport
 
         ## One-line summary
+
         {project_name} is being documented for spec-driven delivery.
 
         ## Business case
+
         TBD
 
         ## Objectives and success metrics
+
         TBD
 
         ## Stakeholders and decision model
+
         TBD
 
         ## Scope
+
         TBD
 
         ## Out of scope
+
         TBD
 
         ## Assumptions
+
         TBD
 
         ## Constraints
+
         TBD
 
         ## Milestone snapshot
+
         TBD
 
         ## Risks and dependencies
+
         TBD
 
         ## Open questions
+
         - Clarify primary user and business outcome.
         """
     )
 
 
 def product_overview() -> str:
-    return dedent(
+    return md(
         """
         # Product Overview
 
         ## Product promise
+
         TBD
 
         ## User groups and stakeholders
+
         TBD
 
         ## Current process and pain points
+
         TBD
 
         ## Target process and value
+
         TBD
 
         ## Core user flows
+
         TBD
 
         ## Capability map
+
         TBD
 
         ## Integration touchpoints
+
         TBD
 
         ## Risks and assumptions
+
         TBD
 
         ## Open questions
+
         - Which workflow matters most for the next release?
         """
     )
@@ -123,90 +151,105 @@ def product_overview() -> str:
 def roadmap(versions: list[str]) -> str:
     sections = []
     for version in versions:
-        heading = version.upper() if version == "mvp" else version.upper()
         sections.append(
-            dedent(
+            md(
                 f"""
-                ## {heading}
+                ## {version.upper()}
 
                 ### Business goal
+
                 TBD
 
                 ### Scope
+
                 TBD
 
                 ### Milestones
+
                 TBD
 
                 ### Dependencies
+
                 TBD
 
                 ### Exit criteria
+
                 TBD
                 """
-            ).strip()
+            )
         )
 
-    return dedent(
+    return md(
         """
         # Roadmap
 
         ## Planning assumptions
+
         - Version scope is business-first and may be refined as details become clearer.
 
         ## Delivery model and priorities
+
         TBD
-
         """
-    ) + "\n\n".join(sections) + dedent(
+    ) + "\n\n" + "\n\n".join(sections) + "\n\n" + md(
         """
-
         ## Cross-version dependencies
+
         TBD
 
         ## Resource and risk notes
+
         TBD
 
         ## Open questions
+
         - Which delivery assumptions still need validation?
         """
     )
 
 
 def architecture_overview() -> str:
-    return dedent(
+    return md(
         """
         # Architecture Overview
 
         ## System context
+
         TBD
 
         ## Reference component map
+
         TBD
 
         ## Key integrations
+
         TBD
 
         ## Data and ownership boundaries
+
         TBD
 
         ## Repository responsibility
+
         TBD
 
         ## Repository non-responsibility
+
         TBD
 
         ## Runtime and deployment assumptions
+
         TBD
 
         ## Architecture risks and open questions
+
         - Which surrounding systems are still outside this repository's visibility?
         """
     )
 
 
 def current_state() -> str:
-    return dedent(
+    return md(
         """
         # Current Delivery State
 
@@ -217,18 +260,23 @@ def current_state() -> str:
         - Ready packets: none
 
         ## Summary
+
         TBD
 
         ## What is already implemented in this branch
+
         TBD
 
         ## What is currently in progress
+
         TBD
 
         ## What should be implemented next
+
         TBD
 
         ## Risks and open questions
+
         - Which feature or packet status still needs confirmation from the team?
         """
     )
@@ -236,7 +284,7 @@ def current_state() -> str:
 
 def module_doc(module_id: str) -> str:
     title = module_id.replace("-", " ").title()
-    return dedent(
+    return md(
         f"""
         # Module: {title}
 
@@ -244,21 +292,27 @@ def module_doc(module_id: str) -> str:
         - Owner: unassigned
 
         ## Responsibility
+
         TBD
 
         ## User value
+
         TBD
 
         ## Feature map by version
+
         TBD
 
         ## Dependencies
+
         TBD
 
         ## Repository touchpoints
+
         TBD
 
         ## Open questions
+
         - Which features belong to this module first?
         """
     )
@@ -266,32 +320,40 @@ def module_doc(module_id: str) -> str:
 
 def version_readme(version: str) -> str:
     heading = version.upper() if version == "mvp" else version.upper()
-    return dedent(
+    return md(
         f"""
         # Version: {heading}
 
         ## Business goal
+
         TBD
 
         ## Scope
+
         TBD
 
         ## Out of scope
+
         TBD
 
         ## Milestones
+
         TBD
 
         ## Dependencies
+
         TBD
 
         ## Exit criteria
+
         TBD
 
         ## Ready features
+
         TBD
 
         ## Open questions
+
         - Which features are implementation-ready for this version?
         """
     )

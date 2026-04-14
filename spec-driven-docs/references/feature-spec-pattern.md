@@ -87,4 +87,5 @@ Link to:
 
 - Keep metadata bullets at the top of the file unchanged so the sync script can parse them.
 - Use numbered headings as written here so the structure is recognizable across projects.
+- Leave one blank line after every heading so the Markdown stays lint-clean and easy to scan.
 - If the user gives only rough input, fill the structure with `unknown` or explicit assumptions instead of dropping sections.

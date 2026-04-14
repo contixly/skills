@@ -42,36 +42,44 @@ def build_packet_body(packet_id: str, title: str, feature_path: Path, feature_me
         - Owner: unassigned
 
         ## Objective
+
         Deliver one coherent slice of `{feature_id}` without expanding scope.
 
         ## Scope in this packet
+
         - Define the exact user-visible outcome for this slice.
         - Keep the change small enough for one implementation pass.
 
         ## Out of scope
+
         - Follow-up enhancements not required for this slice.
         - Adjacent module work unless it is a hard dependency.
 
         ## Inputs and dependencies
+
         - Review the parent feature spec before implementation.
         - Check dependencies listed in the feature metadata.
 
         ## Architecture and repository touchpoints
+
         - Confirm whether this packet changes repository responsibility or integration behavior.
         - Cross-check `docs/architecture.md` before implementation when the feature touches external systems.
 
         ## Delivery notes for the implementing agent
+
         - Prefer business behavior that can be validated from the feature spec.
         - If new questions appear, record them back in the feature doc.
         - After implementing this packet, run a documentation sync pass with `$spec-driven-docs`.
 
         ## Done when
+
         - The slice described here is implemented.
         - Relevant acceptance signals from the feature spec are satisfied.
         - The packet, parent feature, and current-state docs are updated to reflect the latest delivery state.
         - Documentation sync is complete and machine-readable indexes are refreshed.
 
         ## After implementation
+
         When this packet is implemented or materially changed:
 
         1. Update this packet status to `in-progress`, `done`, `blocked`, or `superseded`.
@@ -85,6 +93,7 @@ def build_packet_body(packet_id: str, title: str, feature_path: Path, feature_me
         `Use $spec-driven-docs to sync documentation after implementing packet {packet_id}. Update packet and feature statuses, refresh current-state, update architecture if needed, and regenerate docs/_meta indexes.`
 
         ## References
+
         - [Feature spec]({relative_feature.as_posix()})
         - [Architecture doc](../../../architecture.md)
         - [Roadmap](../../../roadmap.md)
@@ -116,7 +125,7 @@ def main() -> None:
         raise SystemExit(f"Packet already exists: {target_path}")
 
     content = build_packet_body(args.packet_id, args.title, feature_path, feature_meta, args.status)
-    target_path.write_text(content.rstrip() + "\n", encoding="utf-8")
+    target_path.write_text(content.strip() + "\n", encoding="utf-8")
     print(f"Created {target_path} for version {version}")
 
 

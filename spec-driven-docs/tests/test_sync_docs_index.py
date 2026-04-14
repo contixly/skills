@@ -92,6 +92,9 @@ class SyncDocsIndexTests(unittest.TestCase):
             self.assertEqual(delivery_state["implemented_versions"], ["mvp"])
             self.assertEqual(delivery_state["in_progress_features"], ["smart-sync"])
             self.assertEqual(delivery_state["ready_packets"], ["v1-smart-sync-02"])
+            self.assertEqual(feature_index["generated_from"], "docs")
+            self.assertEqual(task_board["generated_from"], "docs")
+            self.assertEqual(delivery_state["generated_from"], "docs")
 
 
 if __name__ == "__main__":

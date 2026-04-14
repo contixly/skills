@@ -14,6 +14,15 @@ def normalize_key(key: str) -> str:
     return key.strip().lower().replace(" ", "_")
 
 
+def display_path(path: Path) -> str:
+    resolved = path.resolve()
+    cwd = Path.cwd().resolve()
+    try:
+        return str(resolved.relative_to(cwd))
+    except ValueError:
+        return path.name
+
+
 def parse_title(path: Path, expected_prefix: str) -> str:
     with path.open(encoding="utf-8") as handle:
         for line in handle:
@@ -141,7 +150,7 @@ def collect_delivery_state(
         "in_progress_features": in_progress_features,
         "ready_packets": ready_packets,
         "path": str(state_path.relative_to(docs_dir)) if state_path.exists() else "current-state.md",
-        "generated_from": str(docs_dir),
+        "generated_from": display_path(docs_dir),
     }
 
 
@@ -161,8 +170,8 @@ def main() -> None:
     tasks = collect_tasks(docs_dir)
     delivery_state = collect_delivery_state(docs_dir, features, tasks)
 
-    feature_index = {"features": features, "generated_from": str(docs_dir)}
-    task_board = {"tasks": tasks, "generated_from": str(docs_dir)}
+    feature_index = {"features": features, "generated_from": display_path(docs_dir)}
+    task_board = {"tasks": tasks, "generated_from": display_path(docs_dir)}
 
     (meta_dir / "feature-index.json").write_text(json.dumps(feature_index, indent=2) + "\n", encoding="utf-8")
     (meta_dir / "task-board.json").write_text(json.dumps(task_board, indent=2) + "\n", encoding="utf-8")
