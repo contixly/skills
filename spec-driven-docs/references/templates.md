@@ -296,6 +296,14 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 
 ## Done when
 
+## After implementation
+- Update this packet status to `in-progress`, `done`, `blocked`, or `superseded`.
+- Update the parent feature status if delivery state changed.
+- Update `docs/current-state.md`.
+- Update `docs/architecture.md` if repository boundary or integrations changed.
+- Re-run doc sync with `$spec-driven-docs`.
+- Example prompt: `Use $spec-driven-docs to sync documentation after implementing packet <packet-id>. Update packet and feature statuses, refresh current-state, update architecture if needed, and regenerate docs/_meta indexes.`
+
 ## References
 - [Feature spec](../features/<feature-id>.md)
 - [Architecture doc](../../../architecture.md)
@@ -310,3 +318,4 @@ Use these templates when creating or normalizing files. Keep them concise. Add s
 - Prefer lists over dense paragraphs for scope and acceptance.
 - If a packet can be parallelized, say so explicitly in `## Delivery notes for the implementing agent`.
 - Keep `current-state.md` short and decision-oriented so another agent can understand branch reality in under a minute.
+- Treat the packet as not fully closed until the documentation sync pass is complete.

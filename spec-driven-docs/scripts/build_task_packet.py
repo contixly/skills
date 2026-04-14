@@ -63,11 +63,26 @@ def build_packet_body(packet_id: str, title: str, feature_path: Path, feature_me
         ## Delivery notes for the implementing agent
         - Prefer business behavior that can be validated from the feature spec.
         - If new questions appear, record them back in the feature doc.
+        - After implementing this packet, run a documentation sync pass with `$spec-driven-docs`.
 
         ## Done when
         - The slice described here is implemented.
         - Relevant acceptance signals from the feature spec are satisfied.
-        - Documentation status is updated if the implementation changes scope.
+        - The packet, parent feature, and current-state docs are updated to reflect the latest delivery state.
+        - Documentation sync is complete and machine-readable indexes are refreshed.
+
+        ## After implementation
+        When this packet is implemented or materially changed:
+
+        1. Update this packet status to `in-progress`, `done`, `blocked`, or `superseded`.
+        2. Update the parent feature status if implementation changes delivery state.
+        3. Update `docs/current-state.md` to reflect what is now implemented, in progress, or ready next.
+        4. Update `docs/architecture.md` if repository responsibility, integrations, or ownership boundaries changed.
+        5. Re-run the documentation sync workflow with `$spec-driven-docs`.
+
+        Suggested follow-up prompt:
+
+        `Use $spec-driven-docs to sync documentation after implementing packet {packet_id}. Update packet and feature statuses, refresh current-state, update architecture if needed, and regenerate docs/_meta indexes.`
 
         ## References
         - [Feature spec]({relative_feature.as_posix()})
