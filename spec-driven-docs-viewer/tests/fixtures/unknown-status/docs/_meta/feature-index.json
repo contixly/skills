@@ -1,0 +1,15 @@
+{
+  "features": [
+    {
+      "id": "queue-sync",
+      "title": "Queue Sync",
+      "module": "operations",
+      "version": "v1",
+      "status": "queued",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/queue-sync.md"
+    }
+  ],
+  "generated_from": "docs"
+}

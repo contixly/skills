@@ -1,0 +1,11 @@
+{
+  "name": "dealdesk-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Internal CRM dashboard for real-estate agencies",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "test": "vitest"
+  }
+}

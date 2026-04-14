@@ -1,0 +1,25 @@
+{
+  "features": [
+    {
+      "id": "smart-sync",
+      "title": "Shared Spec Editing",
+      "module": "collaboration",
+      "version": "v1",
+      "status": "in-progress",
+      "priority": "high",
+      "depends_on": ["realtime-foundation"],
+      "path": "versions/v1/features/smart-sync.md"
+    },
+    {
+      "id": "review-queue",
+      "title": "Review Inbox",
+      "module": "operations",
+      "version": "mvp",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/mvp/features/review-queue.md"
+    }
+  ],
+  "generated_from": "docs"
+}

@@ -1,0 +1,121 @@
+{
+  "skill_name": "spec-driven-docs",
+  "evals": [
+    {
+      "id": 1,
+      "name": "bootstrap-project-docs",
+      "prompt": "Есть тестовый репозиторий в `evals/fixtures/bootstrap-estate-crm/`. Документации почти нет, `docs/` ещё не создан. Нужно на основе содержимого репозитория предложить или создать структуру docs/, оформить верхний уровень в PMBoK-lite формате, явно описать архитектурный контекст и границу ответственности этого репозитория, а потом подготовить первые крупные пакеты работ для фич загрузки объектов и CRM-воронки.",
+      "expected_output": "Скилл должен создать или предложить создать базовую структуру docs/, заполнить ключевые базовые документы в PMBoK-lite формате, добавить минимальный architecture reference и подготовить implementation packets для первых двух фич.",
+      "files": [
+        "evals/fixtures/bootstrap-estate-crm/README.md",
+        "evals/fixtures/bootstrap-estate-crm/apps/web/package.json",
+        "evals/fixtures/bootstrap-estate-crm/apps/api/README.md",
+        "evals/fixtures/bootstrap-estate-crm/workers/importer/README.md"
+      ],
+      "expectations": [
+        "The output creates a `docs/README.md` entry point and a `docs/project-passport.md` file.",
+        "The roadmap covers `MVP`, `V1`, and `V2` as separate planning horizons.",
+        "The output includes a minimal `docs/architecture.md` that explains the application context and the repository boundary.",
+        "The first implementation packets focus on the requested product features rather than code details."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "normalize-existing-docs",
+      "prompt": "Есть тестовый репозиторий в `evals/fixtures/normalize-spec-hub/`. В нём уже лежат заметки в README, backlog.md и несколько разрозненных файлов в docs/. Приведи это к одному формату: PMBoK-lite верхний уровень, modules, roadmap по версиям, architecture reference с границей репозитория, отдельные feature specs и компактный JSON-индекс для других агентов.",
+      "expected_output": "Скилл должен нормализовать существующую документацию в единый контракт docs/, не потеряв бизнес-смысл, выровнять верхний уровень под PMBoK-lite, добавить architecture reference и создать machine-readable индексы.",
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
+      "expectations": [
+        "The output includes a normalized `docs/roadmap.md` plus module-level documentation under `docs/modules/`.",
+        "The output includes PMBoK-lite top-level project docs rather than loose ad hoc notes.",
+        "The output generates compact JSON indexes under `docs/_meta/`.",
+        "The output preserves business context in Markdown instead of collapsing everything into JSON."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "add-feature-and-split-packets",
+      "prompt": "Возьми тестовый репозиторий `evals/fixtures/normalize-spec-hub/`. Добавь в документацию новую фичу `совместное редактирование спецификаций` для версии v1, проверь пересечения с текущими требованиями и разложи её на 3-4 крупных пакета для реализации агентами. Feature spec оформи по формальному numbered-паттерну software-development brief и проверь, нужно ли обновить architecture reference.",
+      "expected_output": "Скилл должен обновить roadmap и module docs, создать или обновить feature spec в формальном шаблоне по образцу software-development brief, выявить конфликты и подготовить implementation packets.",
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
+      "expectations": [
+        "The feature spec is placed under `docs/versions/v1/features/`.",
+        "The feature spec uses numbered sections for incoming request, business case, current/target state, requirements, acceptance, and risks.",
+        "The output contains 3-4 implementation packets for the new feature under `docs/versions/v1/iterations/`.",
+        "The feature addition updates the roadmap or module docs to reflect the new version placement."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "bootstrap-with-role-based-subagents",
+      "prompt": "Возьми тестовый репозиторий `evals/fixtures/bootstrap-estate-crm/` и запусти сценарий инициализации документации через role-based orchestration: analyst, architect, developer, reviewer. Построй docs/ с нуля, оформи верхний уровень в PMBoK-lite, явно опиши границу репозитория, заполни current-state и подготовь первые implementation packets для загрузки объектов и CRM-воронки.",
+      "expected_output": "Скилл должен не только создать docs/, но и отработать через role-based workflow: analyst и architect собирают контекст, developer готовит документы, reviewer валидирует результат. Итог должен содержать готовые docs, current-state и первые пакеты работ.",
+      "files": [
+        "evals/fixtures/bootstrap-estate-crm/README.md",
+        "evals/fixtures/bootstrap-estate-crm/apps/web/package.json",
+        "evals/fixtures/bootstrap-estate-crm/apps/api/README.md",
+        "evals/fixtures/bootstrap-estate-crm/workers/importer/README.md"
+      ],
+      "expectations": [
+        "The workflow explicitly uses or simulates the roles `analyst`, `architect`, `developer`, and `reviewer`.",
+        "The output creates `docs/current-state.md` in addition to the other top-level docs.",
+        "The architecture output clearly separates repository responsibility from systems outside the repository.",
+        "The reviewer step confirms the docs are coherent and packet-ready, or returns concrete issues before completion."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "feature-update-with-role-review-loop",
+      "prompt": "Возьми тестовый репозиторий `evals/fixtures/normalize-spec-hub/` и через workflow analyst + architect + developer + reviewer добавь или обнови фичу `совместное редактирование спецификаций` для v1. Проверь пересечения с текущими требованиями, обнови roadmap и current-state, а затем прогони reviewer pass перед завершением.",
+      "expected_output": "Скилл должен использовать role-based orchestration при изменении фичи: analyst определяет placement и конфликты, architect оценивает boundary и integration impact, developer обновляет docs, reviewer проверяет согласованность и готовность результата.",
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
+      "expectations": [
+        "The workflow explicitly uses or simulates the roles `analyst`, `architect`, `developer`, and `reviewer`.",
+        "The feature update also updates `docs/current-state.md` when execution state changes.",
+        "The architecture pass determines whether architecture documentation must change.",
+        "The reviewer pass checks for stale references, version conflicts, and inconsistent packet state."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "packet-preparation-with-technical-context",
+      "prompt": "Возьми тестовый репозиторий `evals/fixtures/normalize-spec-hub/` и подготовь implementation packets для одной существующей или новой фичи через role-based orchestration. Используй analyst для сбора продуктового контекста, architect для сбора актуальных технических ограничений из репозитория, developer для подготовки 2-5 пакетов и reviewer для проверки, что пакеты реально можно отдавать агентам в работу.",
+      "expected_output": "Скилл должен показать, что generation пакетов опирается не только на feature spec, но и на свежий technical context из репозитория. Пакеты должны быть краткими, business-first, но содержать нужные ограничения и ссылки для реализации.",
+      "files": [
+        "evals/fixtures/normalize-spec-hub/README.md",
+        "evals/fixtures/normalize-spec-hub/backlog.md",
+        "evals/fixtures/normalize-spec-hub/docs/notes.md",
+        "evals/fixtures/normalize-spec-hub/docs/roadmap-draft.md",
+        "evals/fixtures/normalize-spec-hub/docs/feature-ideas.md",
+        "evals/fixtures/normalize-spec-hub/services/api/README.md"
+      ],
+      "expectations": [
+        "The workflow explicitly uses or simulates the roles `analyst`, `architect`, `developer`, and `reviewer`.",
+        "The packet generation step gathers current technical constraints from repository context before drafting packets.",
+        "The resulting packets remain business-first and do not turn into code walkthroughs.",
+        "The reviewer pass confirms the packets are actionable for downstream implementation agents."
+      ]
+    }
+  ]
+}

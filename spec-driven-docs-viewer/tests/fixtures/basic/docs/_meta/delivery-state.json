@@ -1,0 +1,9 @@
+{
+  "branch": "feature/spec-docs",
+  "updated_at": "2026-04-14",
+  "implemented_versions": ["mvp"],
+  "in_progress_features": ["smart-sync"],
+  "ready_packets": ["v1-smart-sync-01"],
+  "path": "current-state.md",
+  "generated_from": "docs"
+}
