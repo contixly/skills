@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "v1-queue-sync-01",
+      "title": "Queue Sync Slice",
+      "feature": "queue-sync",
+      "version": "v1",
+      "status": "queued",
+      "owner": "agent-q",
+      "path": "versions/v1/iterations/v1-queue-sync-01.md"
+    }
+  ],
+  "generated_from": "docs"
+}

@@ -174,6 +174,15 @@ After any meaningful doc update:
    - use `_meta/*.json` for compact indexing and tracker sync
    - treat `delivery-state.json` as the stable summary of current branch reality
 
+## 6. Use the viewer
+
+When the target repository already has `spec-driven-docs` outputs and you want a read-only board view:
+
+1. Run `npx @contixly/spec-driven-docs-viewer` from the target repository root.
+2. Let the CLI read `docs/_meta/*.json` and packet markdown from the current repository, start a local server, and print the viewer URL.
+3. Open the printed URL to inspect the feature board, drill into packet implementation detail, and copy the next agent prompt.
+4. If the viewer reports stale or missing `_meta` files, run the docs sync workflow first.
+
 ## Interview guidance
 
 Ask targeted questions only for missing planning context. Prefer this order:

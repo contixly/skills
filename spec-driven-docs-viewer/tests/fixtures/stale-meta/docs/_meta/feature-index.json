@@ -1,0 +1,15 @@
+{
+  "features": [
+    {
+      "id": "smart-sync",
+      "title": "Shared Spec Editing",
+      "module": "collaboration",
+      "version": "v1",
+      "status": "in-progress",
+      "priority": "high",
+      "depends_on": ["realtime-foundation"],
+      "path": "versions/v1/features/smart-sync.md"
+    }
+  ],
+  "generated_from": "docs"
+}

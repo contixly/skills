@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "v1-smart-sync-01",
+      "title": "Presence and Edit Locking",
+      "feature": "smart-sync",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-smart-sync-01.md"
+    }
+  ],
+  "generated_from": "docs"
+}

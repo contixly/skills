@@ -35,6 +35,16 @@ Expected outcome:
 - feature specs and implementation packets for the next delivery steps
 - compact indexes in `docs/_meta/`
 
+## Viewer
+
+Start the local read-only board from any repository that already contains `spec-driven-docs` outputs:
+
+```bash
+npx @contixly/spec-driven-docs-viewer
+```
+
+The command reads `docs/_meta/*.json` and packet markdown from the current repository, starts a local server, and prints a URL for the viewer so you can inspect feature status, drill into packet state, and copy the next implementation prompt.
+
 ## Best Fit
 
 Use this skill when you need to:
