@@ -151,6 +151,7 @@ Implementation packets are the handoff surface for delivery agents.
 8. Keep packet instructions short enough to scan, but specific enough to implement.
 9. Reflect newly ready packets in `docs/current-state.md` if this affects next implementation sequencing.
 10. Dispatch reviewer to confirm each packet is actionable for an implementation agent and does not require rediscovering the whole product.
+11. Treat the packet as not fully closed until the documentation sync pass is complete.
 
 ### 5. Sync for other skills and trackers
 
@@ -225,5 +226,7 @@ When you finish a documentation pass, leave the project with:
 - roadmap and module ownership that match the feature files
 - at least the next implementation-ready packets if the user asked for planning
 - fresh JSON indexes for downstream automation and tracker sync
+- a packet workflow that requires the implementation agent or controller to sync docs after functional changes
+- the packet is not fully closed until the documentation sync pass is complete
 
 If you cannot complete the structure because core business context is missing, create the minimal skeleton, record the gaps in `## Open questions`, and say exactly what is still unknown.
