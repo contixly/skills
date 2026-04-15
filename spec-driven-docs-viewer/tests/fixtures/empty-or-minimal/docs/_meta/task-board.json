@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "minimal-packet-01",
+      "title": "Minimal Packet Coverage",
+      "feature": "minimal-feature",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/minimal-packet-01.md"
+    }
+  ],
+  "generated_from": "docs"
+}

@@ -1,0 +1,11 @@
+{
+  "branch": "feature/stale-and-broken",
+  "updated_at": "2026-04-15",
+  "implemented_versions": [],
+  "in_progress_features": [],
+  "ready_packets": [
+    "v1-review-handoff-01"
+  ],
+  "path": "current-state.md",
+  "generated_from": "docs"
+}

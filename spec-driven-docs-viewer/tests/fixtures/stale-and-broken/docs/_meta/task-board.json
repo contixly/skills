@@ -1,0 +1,23 @@
+{
+  "tasks": [
+    {
+      "id": "v1-review-handoff-01",
+      "title": "Review Handoff Baseline",
+      "feature": "review-handoff",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-b",
+      "path": "versions/v1/iterations/v1-review-handoff-01.md"
+    },
+    {
+      "id": "mvp-empty-checklist-01",
+      "title": "Empty Checklist Repair",
+      "feature": "empty-checklist",
+      "version": "mvp",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-empty-checklist-01.md"
+    }
+  ],
+  "generated_from": "docs"
+}

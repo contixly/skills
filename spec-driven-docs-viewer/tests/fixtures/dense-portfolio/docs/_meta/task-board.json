@@ -1,0 +1,815 @@
+{
+  "tasks": [
+    {
+      "id": "mvp-feature-01-01",
+      "title": "Packet 1 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-01-01.md"
+    },
+    {
+      "id": "mvp-feature-01-02",
+      "title": "Packet 2 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-01-02.md"
+    },
+    {
+      "id": "mvp-feature-01-03",
+      "title": "Packet 3 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-01-03.md"
+    },
+    {
+      "id": "mvp-feature-01-04",
+      "title": "Packet 4 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-01-04.md"
+    },
+    {
+      "id": "mvp-feature-01-05",
+      "title": "Packet 5 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-01-05.md"
+    },
+    {
+      "id": "mvp-feature-01-06",
+      "title": "Packet 6 for Platform Capability 1",
+      "feature": "feature-01",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-01-06.md"
+    },
+    {
+      "id": "v1-feature-02-01",
+      "title": "Packet 1 for Intake Capability 2",
+      "feature": "feature-02",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-02-01.md"
+    },
+    {
+      "id": "v1-feature-02-02",
+      "title": "Packet 2 for Intake Capability 2",
+      "feature": "feature-02",
+      "version": "v1",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-02-02.md"
+    },
+    {
+      "id": "v1-feature-02-03",
+      "title": "Packet 3 for Intake Capability 2",
+      "feature": "feature-02",
+      "version": "v1",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-02-03.md"
+    },
+    {
+      "id": "v2-feature-03-01",
+      "title": "Packet 1 for Review Capability 3",
+      "feature": "feature-03",
+      "version": "v2",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-03-01.md"
+    },
+    {
+      "id": "v2-feature-03-02",
+      "title": "Packet 2 for Review Capability 3",
+      "feature": "feature-03",
+      "version": "v2",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-03-02.md"
+    },
+    {
+      "id": "v2-feature-03-03",
+      "title": "Packet 3 for Review Capability 3",
+      "feature": "feature-03",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-03-03.md"
+    },
+    {
+      "id": "mvp-feature-04-01",
+      "title": "Packet 1 for Delivery Capability 4",
+      "feature": "feature-04",
+      "version": "mvp",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-04-01.md"
+    },
+    {
+      "id": "mvp-feature-04-02",
+      "title": "Packet 2 for Delivery Capability 4",
+      "feature": "feature-04",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-04-02.md"
+    },
+    {
+      "id": "mvp-feature-04-03",
+      "title": "Packet 3 for Delivery Capability 4",
+      "feature": "feature-04",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-04-03.md"
+    },
+    {
+      "id": "v1-feature-05-01",
+      "title": "Packet 1 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-05-01.md"
+    },
+    {
+      "id": "v1-feature-05-02",
+      "title": "Packet 2 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-05-02.md"
+    },
+    {
+      "id": "v1-feature-05-03",
+      "title": "Packet 3 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-05-03.md"
+    },
+    {
+      "id": "v1-feature-05-04",
+      "title": "Packet 4 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-05-04.md"
+    },
+    {
+      "id": "v1-feature-05-05",
+      "title": "Packet 5 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-05-05.md"
+    },
+    {
+      "id": "v1-feature-05-06",
+      "title": "Packet 6 for Billing Capability 5",
+      "feature": "feature-05",
+      "version": "v1",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-05-06.md"
+    },
+    {
+      "id": "v2-feature-06-01",
+      "title": "Packet 1 for Analytics Capability 6",
+      "feature": "feature-06",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-06-01.md"
+    },
+    {
+      "id": "v2-feature-06-02",
+      "title": "Packet 2 for Analytics Capability 6",
+      "feature": "feature-06",
+      "version": "v2",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-06-02.md"
+    },
+    {
+      "id": "v2-feature-06-03",
+      "title": "Packet 3 for Analytics Capability 6",
+      "feature": "feature-06",
+      "version": "v2",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-06-03.md"
+    },
+    {
+      "id": "mvp-feature-07-01",
+      "title": "Packet 1 for Support Capability 7",
+      "feature": "feature-07",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-07-01.md"
+    },
+    {
+      "id": "mvp-feature-07-02",
+      "title": "Packet 2 for Support Capability 7",
+      "feature": "feature-07",
+      "version": "mvp",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-07-02.md"
+    },
+    {
+      "id": "mvp-feature-07-03",
+      "title": "Packet 3 for Support Capability 7",
+      "feature": "feature-07",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-07-03.md"
+    },
+    {
+      "id": "v1-feature-08-01",
+      "title": "Packet 1 for Platform Capability 8",
+      "feature": "feature-08",
+      "version": "v1",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-08-01.md"
+    },
+    {
+      "id": "v1-feature-08-02",
+      "title": "Packet 2 for Platform Capability 8",
+      "feature": "feature-08",
+      "version": "v1",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-08-02.md"
+    },
+    {
+      "id": "v1-feature-08-03",
+      "title": "Packet 3 for Platform Capability 8",
+      "feature": "feature-08",
+      "version": "v1",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-08-03.md"
+    },
+    {
+      "id": "v2-feature-09-01",
+      "title": "Packet 1 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-09-01.md"
+    },
+    {
+      "id": "v2-feature-09-02",
+      "title": "Packet 2 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-09-02.md"
+    },
+    {
+      "id": "v2-feature-09-03",
+      "title": "Packet 3 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-09-03.md"
+    },
+    {
+      "id": "v2-feature-09-04",
+      "title": "Packet 4 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-09-04.md"
+    },
+    {
+      "id": "v2-feature-09-05",
+      "title": "Packet 5 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-09-05.md"
+    },
+    {
+      "id": "v2-feature-09-06",
+      "title": "Packet 6 for Intake Capability 9",
+      "feature": "feature-09",
+      "version": "v2",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-09-06.md"
+    },
+    {
+      "id": "mvp-feature-10-01",
+      "title": "Packet 1 for Review Capability 10",
+      "feature": "feature-10",
+      "version": "mvp",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-10-01.md"
+    },
+    {
+      "id": "mvp-feature-10-02",
+      "title": "Packet 2 for Review Capability 10",
+      "feature": "feature-10",
+      "version": "mvp",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-10-02.md"
+    },
+    {
+      "id": "mvp-feature-10-03",
+      "title": "Packet 3 for Review Capability 10",
+      "feature": "feature-10",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-10-03.md"
+    },
+    {
+      "id": "v1-feature-11-01",
+      "title": "Packet 1 for Delivery Capability 11",
+      "feature": "feature-11",
+      "version": "v1",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-11-01.md"
+    },
+    {
+      "id": "v1-feature-11-02",
+      "title": "Packet 2 for Delivery Capability 11",
+      "feature": "feature-11",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-11-02.md"
+    },
+    {
+      "id": "v1-feature-11-03",
+      "title": "Packet 3 for Delivery Capability 11",
+      "feature": "feature-11",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-11-03.md"
+    },
+    {
+      "id": "v2-feature-12-01",
+      "title": "Packet 1 for Billing Capability 12",
+      "feature": "feature-12",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-12-01.md"
+    },
+    {
+      "id": "v2-feature-12-02",
+      "title": "Packet 2 for Billing Capability 12",
+      "feature": "feature-12",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-12-02.md"
+    },
+    {
+      "id": "v2-feature-12-03",
+      "title": "Packet 3 for Billing Capability 12",
+      "feature": "feature-12",
+      "version": "v2",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-12-03.md"
+    },
+    {
+      "id": "mvp-feature-13-01",
+      "title": "Packet 1 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-13-01.md"
+    },
+    {
+      "id": "mvp-feature-13-02",
+      "title": "Packet 2 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-13-02.md"
+    },
+    {
+      "id": "mvp-feature-13-03",
+      "title": "Packet 3 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-13-03.md"
+    },
+    {
+      "id": "mvp-feature-13-04",
+      "title": "Packet 4 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-13-04.md"
+    },
+    {
+      "id": "mvp-feature-13-05",
+      "title": "Packet 5 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-13-05.md"
+    },
+    {
+      "id": "mvp-feature-13-06",
+      "title": "Packet 6 for Analytics Capability 13",
+      "feature": "feature-13",
+      "version": "mvp",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-13-06.md"
+    },
+    {
+      "id": "v1-feature-14-01",
+      "title": "Packet 1 for Support Capability 14",
+      "feature": "feature-14",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-14-01.md"
+    },
+    {
+      "id": "v1-feature-14-02",
+      "title": "Packet 2 for Support Capability 14",
+      "feature": "feature-14",
+      "version": "v1",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-14-02.md"
+    },
+    {
+      "id": "v1-feature-14-03",
+      "title": "Packet 3 for Support Capability 14",
+      "feature": "feature-14",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-14-03.md"
+    },
+    {
+      "id": "v2-feature-15-01",
+      "title": "Packet 1 for Platform Capability 15",
+      "feature": "feature-15",
+      "version": "v2",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-15-01.md"
+    },
+    {
+      "id": "v2-feature-15-02",
+      "title": "Packet 2 for Platform Capability 15",
+      "feature": "feature-15",
+      "version": "v2",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-15-02.md"
+    },
+    {
+      "id": "v2-feature-15-03",
+      "title": "Packet 3 for Platform Capability 15",
+      "feature": "feature-15",
+      "version": "v2",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-15-03.md"
+    },
+    {
+      "id": "mvp-feature-16-01",
+      "title": "Packet 1 for Intake Capability 16",
+      "feature": "feature-16",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-16-01.md"
+    },
+    {
+      "id": "mvp-feature-16-02",
+      "title": "Packet 2 for Intake Capability 16",
+      "feature": "feature-16",
+      "version": "mvp",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-16-02.md"
+    },
+    {
+      "id": "mvp-feature-16-03",
+      "title": "Packet 3 for Intake Capability 16",
+      "feature": "feature-16",
+      "version": "mvp",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-16-03.md"
+    },
+    {
+      "id": "v1-feature-17-01",
+      "title": "Packet 1 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-17-01.md"
+    },
+    {
+      "id": "v1-feature-17-02",
+      "title": "Packet 2 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-17-02.md"
+    },
+    {
+      "id": "v1-feature-17-03",
+      "title": "Packet 3 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-17-03.md"
+    },
+    {
+      "id": "v1-feature-17-04",
+      "title": "Packet 4 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-17-04.md"
+    },
+    {
+      "id": "v1-feature-17-05",
+      "title": "Packet 5 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-17-05.md"
+    },
+    {
+      "id": "v1-feature-17-06",
+      "title": "Packet 6 for Review Capability 17",
+      "feature": "feature-17",
+      "version": "v1",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-17-06.md"
+    },
+    {
+      "id": "v2-feature-18-01",
+      "title": "Packet 1 for Delivery Capability 18",
+      "feature": "feature-18",
+      "version": "v2",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-18-01.md"
+    },
+    {
+      "id": "v2-feature-18-02",
+      "title": "Packet 2 for Delivery Capability 18",
+      "feature": "feature-18",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-18-02.md"
+    },
+    {
+      "id": "v2-feature-18-03",
+      "title": "Packet 3 for Delivery Capability 18",
+      "feature": "feature-18",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-18-03.md"
+    },
+    {
+      "id": "mvp-feature-19-01",
+      "title": "Packet 1 for Billing Capability 19",
+      "feature": "feature-19",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-19-01.md"
+    },
+    {
+      "id": "mvp-feature-19-02",
+      "title": "Packet 2 for Billing Capability 19",
+      "feature": "feature-19",
+      "version": "mvp",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-19-02.md"
+    },
+    {
+      "id": "mvp-feature-19-03",
+      "title": "Packet 3 for Billing Capability 19",
+      "feature": "feature-19",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-19-03.md"
+    },
+    {
+      "id": "v1-feature-20-01",
+      "title": "Packet 1 for Analytics Capability 20",
+      "feature": "feature-20",
+      "version": "v1",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-20-01.md"
+    },
+    {
+      "id": "v1-feature-20-02",
+      "title": "Packet 2 for Analytics Capability 20",
+      "feature": "feature-20",
+      "version": "v1",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-20-02.md"
+    },
+    {
+      "id": "v1-feature-20-03",
+      "title": "Packet 3 for Analytics Capability 20",
+      "feature": "feature-20",
+      "version": "v1",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-20-03.md"
+    },
+    {
+      "id": "v2-feature-21-01",
+      "title": "Packet 1 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-21-01.md"
+    },
+    {
+      "id": "v2-feature-21-02",
+      "title": "Packet 2 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "planned",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-21-02.md"
+    },
+    {
+      "id": "v2-feature-21-03",
+      "title": "Packet 3 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-21-03.md"
+    },
+    {
+      "id": "v2-feature-21-04",
+      "title": "Packet 4 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-21-04.md"
+    },
+    {
+      "id": "v2-feature-21-05",
+      "title": "Packet 5 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-21-05.md"
+    },
+    {
+      "id": "v2-feature-21-06",
+      "title": "Packet 6 for Support Capability 21",
+      "feature": "feature-21",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-21-06.md"
+    },
+    {
+      "id": "mvp-feature-22-01",
+      "title": "Packet 1 for Platform Capability 22",
+      "feature": "feature-22",
+      "version": "mvp",
+      "status": "planned",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-22-01.md"
+    },
+    {
+      "id": "mvp-feature-22-02",
+      "title": "Packet 2 for Platform Capability 22",
+      "feature": "feature-22",
+      "version": "mvp",
+      "status": "ready",
+      "owner": "unassigned",
+      "path": "versions/mvp/iterations/mvp-feature-22-02.md"
+    },
+    {
+      "id": "mvp-feature-22-03",
+      "title": "Packet 3 for Platform Capability 22",
+      "feature": "feature-22",
+      "version": "mvp",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/mvp/iterations/mvp-feature-22-03.md"
+    },
+    {
+      "id": "v1-feature-23-01",
+      "title": "Packet 1 for Intake Capability 23",
+      "feature": "feature-23",
+      "version": "v1",
+      "status": "ready",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-23-01.md"
+    },
+    {
+      "id": "v1-feature-23-02",
+      "title": "Packet 2 for Intake Capability 23",
+      "feature": "feature-23",
+      "version": "v1",
+      "status": "in-progress",
+      "owner": "unassigned",
+      "path": "versions/v1/iterations/v1-feature-23-02.md"
+    },
+    {
+      "id": "v1-feature-23-03",
+      "title": "Packet 3 for Intake Capability 23",
+      "feature": "feature-23",
+      "version": "v1",
+      "status": "done",
+      "owner": "agent-a",
+      "path": "versions/v1/iterations/v1-feature-23-03.md"
+    },
+    {
+      "id": "v2-feature-24-01",
+      "title": "Packet 1 for Review Capability 24",
+      "feature": "feature-24",
+      "version": "v2",
+      "status": "in-progress",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-24-01.md"
+    },
+    {
+      "id": "v2-feature-24-02",
+      "title": "Packet 2 for Review Capability 24",
+      "feature": "feature-24",
+      "version": "v2",
+      "status": "done",
+      "owner": "unassigned",
+      "path": "versions/v2/iterations/v2-feature-24-02.md"
+    },
+    {
+      "id": "v2-feature-24-03",
+      "title": "Packet 3 for Review Capability 24",
+      "feature": "feature-24",
+      "version": "v2",
+      "status": "blocked",
+      "owner": "agent-a",
+      "path": "versions/v2/iterations/v2-feature-24-03.md"
+    }
+  ],
+  "generated_from": "docs"
+}

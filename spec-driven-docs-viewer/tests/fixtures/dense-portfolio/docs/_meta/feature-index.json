@@ -1,0 +1,260 @@
+{
+  "features": [
+    {
+      "id": "feature-01",
+      "title": "Platform Capability 1",
+      "module": "platform",
+      "version": "mvp",
+      "status": "planned",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-01.md"
+    },
+    {
+      "id": "feature-02",
+      "title": "Intake Capability 2",
+      "module": "intake",
+      "version": "v1",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-02.md"
+    },
+    {
+      "id": "feature-03",
+      "title": "Review Capability 3",
+      "module": "review",
+      "version": "v2",
+      "status": "in-progress",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-03.md"
+    },
+    {
+      "id": "feature-04",
+      "title": "Delivery Capability 4",
+      "module": "delivery",
+      "version": "mvp",
+      "status": "done",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-04.md"
+    },
+    {
+      "id": "feature-05",
+      "title": "Billing Capability 5",
+      "module": "billing",
+      "version": "v1",
+      "status": "blocked",
+      "priority": "medium",
+      "depends_on": [
+        "feature-01",
+        "feature-02"
+      ],
+      "path": "versions/v1/features/feature-05.md"
+    },
+    {
+      "id": "feature-06",
+      "title": "Analytics Capability 6",
+      "module": "analytics",
+      "version": "v2",
+      "status": "superseded",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-06.md"
+    },
+    {
+      "id": "feature-07",
+      "title": "Support Capability 7",
+      "module": "support",
+      "version": "mvp",
+      "status": "unknown",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-07.md"
+    },
+    {
+      "id": "feature-08",
+      "title": "Platform Capability 8",
+      "module": "platform",
+      "version": "v1",
+      "status": "planned",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-08.md"
+    },
+    {
+      "id": "feature-09",
+      "title": "Intake Capability 9",
+      "module": "intake",
+      "version": "v2",
+      "status": "ready",
+      "priority": "low",
+      "depends_on": [
+        "feature-01",
+        "feature-02"
+      ],
+      "path": "versions/v2/features/feature-09.md"
+    },
+    {
+      "id": "feature-10",
+      "title": "Review Capability 10",
+      "module": "review",
+      "version": "mvp",
+      "status": "in-progress",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-10.md"
+    },
+    {
+      "id": "feature-11",
+      "title": "Delivery Capability 11",
+      "module": "delivery",
+      "version": "v1",
+      "status": "done",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-11.md"
+    },
+    {
+      "id": "feature-12",
+      "title": "Billing Capability 12",
+      "module": "billing",
+      "version": "v2",
+      "status": "blocked",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-12.md"
+    },
+    {
+      "id": "feature-13",
+      "title": "Analytics Capability 13",
+      "module": "analytics",
+      "version": "mvp",
+      "status": "superseded",
+      "priority": "high",
+      "depends_on": [
+        "feature-01",
+        "feature-02"
+      ],
+      "path": "versions/mvp/features/feature-13.md"
+    },
+    {
+      "id": "feature-14",
+      "title": "Support Capability 14",
+      "module": "support",
+      "version": "v1",
+      "status": "unknown",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-14.md"
+    },
+    {
+      "id": "feature-15",
+      "title": "Platform Capability 15",
+      "module": "platform",
+      "version": "v2",
+      "status": "planned",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-15.md"
+    },
+    {
+      "id": "feature-16",
+      "title": "Intake Capability 16",
+      "module": "intake",
+      "version": "mvp",
+      "status": "ready",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-16.md"
+    },
+    {
+      "id": "feature-17",
+      "title": "Review Capability 17",
+      "module": "review",
+      "version": "v1",
+      "status": "in-progress",
+      "priority": "medium",
+      "depends_on": [
+        "feature-01",
+        "feature-02"
+      ],
+      "path": "versions/v1/features/feature-17.md"
+    },
+    {
+      "id": "feature-18",
+      "title": "Delivery Capability 18",
+      "module": "delivery",
+      "version": "v2",
+      "status": "done",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-18.md"
+    },
+    {
+      "id": "feature-19",
+      "title": "Billing Capability 19",
+      "module": "billing",
+      "version": "mvp",
+      "status": "blocked",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-19.md"
+    },
+    {
+      "id": "feature-20",
+      "title": "Analytics Capability 20",
+      "module": "analytics",
+      "version": "v1",
+      "status": "superseded",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-20.md"
+    },
+    {
+      "id": "feature-21",
+      "title": "Support Capability 21",
+      "module": "support",
+      "version": "v2",
+      "status": "unknown",
+      "priority": "low",
+      "depends_on": [
+        "feature-01",
+        "feature-02"
+      ],
+      "path": "versions/v2/features/feature-21.md"
+    },
+    {
+      "id": "feature-22",
+      "title": "Platform Capability 22",
+      "module": "platform",
+      "version": "mvp",
+      "status": "planned",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/mvp/features/feature-22.md"
+    },
+    {
+      "id": "feature-23",
+      "title": "Intake Capability 23",
+      "module": "intake",
+      "version": "v1",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "path": "versions/v1/features/feature-23.md"
+    },
+    {
+      "id": "feature-24",
+      "title": "Review Capability 24",
+      "module": "review",
+      "version": "v2",
+      "status": "in-progress",
+      "priority": "low",
+      "depends_on": [],
+      "path": "versions/v2/features/feature-24.md"
+    }
+  ],
+  "generated_from": "docs"
+}

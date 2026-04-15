@@ -21,6 +21,8 @@ Run the viewer locally inside a repository that already has generated `docs/_met
 npx @contixly/spec-driven-docs-viewer
 ```
 
+For viewer development and local debugging, see [spec-driven-docs-viewer/README.md](./spec-driven-docs-viewer/README.md).
+
 ## What is inside
 
 ### `spec-driven-docs`
@@ -45,13 +47,7 @@ It includes helper scripts for:
 
 This package renders the generated documentation into a local board so humans can inspect roadmap state, feature readiness, and packet prompts without opening many markdown files by hand.
 
-Useful commands:
-
-```bash
-npx @contixly/spec-driven-docs-viewer
-```
-
-For publishing, the package exposes a CLI entry point and includes a `publish:package` script.
+Use the runtime command above for a packaged local board. For dev-mode source switching and fixture workflows, use the package README.
 
 ## Repository layout
 

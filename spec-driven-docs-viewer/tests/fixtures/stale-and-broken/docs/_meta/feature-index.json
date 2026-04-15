@@ -1,0 +1,27 @@
+{
+  "features": [
+    {
+      "id": "review-handoff",
+      "title": "Review Handoff",
+      "module": "review",
+      "version": "v1",
+      "status": "ready",
+      "priority": "high",
+      "depends_on": [],
+      "path": "versions/v1/features/review-handoff.md"
+    },
+    {
+      "id": "empty-checklist",
+      "title": "Empty Checklist Recovery",
+      "module": "support",
+      "version": "mvp",
+      "status": "blocked",
+      "priority": "medium",
+      "depends_on": [
+        "review-handoff"
+      ],
+      "path": "versions/mvp/features/empty-checklist.md"
+    }
+  ],
+  "generated_from": "docs"
+}
