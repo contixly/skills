@@ -4,8 +4,10 @@ Repository for reusable AI skills, prompt packs, and supporting tooling used to 
 
 This repo currently contains:
 
-- `spec-driven-docs` - a skill for turning repository context into a structured `docs/` workspace for AI-assisted planning and delivery
-- `spec-driven-docs-viewer` - a local read-only viewer for inspecting generated docs, feature status, and implementation packets
+- `spec-driven-docs` - a skill for turning repository context into a structured `docs/` workspace for AI-assisted
+  planning and delivery
+- `spec-driven-docs-viewer` - a local read-only viewer for inspecting generated docs, feature status, and implementation
+  packets
 
 ## Quick start
 
@@ -21,13 +23,21 @@ Run the viewer locally inside a repository that already has generated `docs/_met
 npx @contixly/spec-driven-docs-viewer
 ```
 
-For viewer development and local debugging, see [spec-driven-docs-viewer/README.md](./spec-driven-docs-viewer/README.md).
+Viewer preview:
+
+| Board                                                                                        | Packet                                                                                                |
+|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| ![Viewer board](https://cdn.contixly.com/github/contixly/skills/assets/img/board-screen.png) | ![Viewer packet detail](https://cdn.contixly.com/github/contixly/skills/assets/img/packet-screen.png) |
+
+For viewer development and local debugging,
+see [spec-driven-docs-viewer/README.md](./spec-driven-docs-viewer/README.md).
 
 ## What is inside
 
 ### `spec-driven-docs`
 
-The main skill in this repository. It helps bootstrap or normalize documentation so agents can work from a stable business and delivery context instead of rediscovering the project on every pass.
+The main skill in this repository. It helps bootstrap or normalize documentation so agents can work from a stable
+business and delivery context instead of rediscovering the project on every pass.
 
 Key files:
 
@@ -45,9 +55,11 @@ It includes helper scripts for:
 
 ### `spec-driven-docs-viewer`
 
-This package renders the generated documentation into a local board so humans can inspect roadmap state, feature readiness, and packet prompts without opening many markdown files by hand.
+This package renders the generated documentation into a local board so humans can inspect roadmap state, feature
+readiness, and packet prompts without opening many markdown files by hand.
 
-Use the runtime command above for a packaged local board. For dev-mode source switching and fixture workflows, use the package README.
+Use the runtime command above for a packaged local board. For dev-mode source switching and fixture workflows, use the
+package README.
 
 ## Repository layout
 
@@ -63,4 +75,5 @@ Use the runtime command above for a packaged local board. For dev-mode source sw
 
 ## Publishing notes
 
-The repository is meant to be readable on GitHub without extra context. Keep the top section current, prefer direct links over prose-heavy explanations, and update this page when new skills or tools are added.
+The repository is meant to be readable on GitHub without extra context. Keep the top section current, prefer direct
+links over prose-heavy explanations, and update this page when new skills or tools are added.
