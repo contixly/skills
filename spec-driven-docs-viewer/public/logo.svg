@@ -1,0 +1,85 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="256"
+  viewBox="0 0 256 256"
+  fill="none"
+>
+  <title>Spec-Driven Docs Viewer icon</title>
+  <defs>
+    <linearGradient id="board-surface" x1="52" y1="40" x2="208" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBF7EF" />
+      <stop offset="1" stop-color="#EFE5D3" />
+    </linearGradient>
+    <linearGradient id="sheet-front" x1="82" y1="64" x2="220" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFDF8" />
+      <stop offset="1" stop-color="#F4EBDD" />
+    </linearGradient>
+    <linearGradient id="sheet-back" x1="42" y1="32" x2="172" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8D9C1" />
+      <stop offset="1" stop-color="#D7C3A5" />
+    </linearGradient>
+    <linearGradient id="flow-line" x1="88" y1="170" x2="183" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B86D3A" />
+      <stop offset="1" stop-color="#8A4C2A" />
+    </linearGradient>
+    <filter id="drop-shadow" x="20" y="18" width="216" height="220" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix
+        in="SourceAlpha"
+        type="matrix"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha"
+      />
+      <feOffset dy="10" />
+      <feGaussianBlur stdDeviation="10" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0.26 0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0.18 0"
+      />
+      <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_1_1" />
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow_1_1" mode="normal" result="shape" />
+    </filter>
+  </defs>
+
+  <rect width="256" height="256" rx="64" fill="url(#board-surface)" />
+
+  <g filter="url(#drop-shadow)">
+    <path
+      d="M54 42C54 34.268 60.268 28 68 28H143.201C146.914 28 150.475 29.4749 153.101 32.1005L184.899 63.8995C187.525 66.5251 189 70.0862 189 73.799V157C189 164.732 182.732 171 175 171H68C60.268 171 54 164.732 54 157V42Z"
+      fill="url(#sheet-back)"
+    />
+    <path
+      d="M75 68C75 60.268 81.268 54 89 54H164.201C167.914 54 171.475 55.4749 174.101 58.1005L205.899 89.8995C208.525 92.5251 210 96.0862 210 99.799V188C210 195.732 203.732 202 196 202H89C81.268 202 75 195.732 75 188V68Z"
+      fill="url(#sheet-front)"
+    />
+    <path
+      d="M164 54V83C164 90.732 170.268 97 178 97H210"
+      fill="#F1DFC5"
+    />
+    <path
+      d="M164 54V83C164 90.732 170.268 97 178 97H210"
+      stroke="#9D7A52"
+      stroke-width="10"
+      stroke-linejoin="round"
+    />
+
+    <rect x="94" y="98" width="22" height="80" rx="8" fill="#E6D7BF" />
+    <rect x="122" y="98" width="22" height="80" rx="8" fill="#DDC9AC" />
+    <rect x="150" y="98" width="22" height="80" rx="8" fill="#D3BC9D" />
+
+    <path
+      d="M94 168C106 168 112 151 124 151C136 151 142 110 154 110C166 110 172 128 183 128"
+      stroke="url(#flow-line)"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <circle cx="94" cy="168" r="11" fill="#F8F1E6" stroke="#8A4C2A" stroke-width="8" />
+    <circle cx="124" cy="151" r="11" fill="#F8F1E6" stroke="#8A4C2A" stroke-width="8" />
+    <circle cx="154" cy="110" r="11" fill="#F8F1E6" stroke="#8A4C2A" stroke-width="8" />
+    <circle cx="183" cy="128" r="11" fill="#F8F1E6" stroke="#8A4C2A" stroke-width="8" />
+  </g>
+</svg>

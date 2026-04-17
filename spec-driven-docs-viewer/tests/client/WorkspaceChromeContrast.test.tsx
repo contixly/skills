@@ -82,6 +82,60 @@ describe("viewer chrome contrast", () => {
     ).toHaveClass("tracker-metric-card")
   })
 
+  test("renders the viewer logo in the workspace header block", () => {
+    const workspace = createWorkspace()
+
+    const { container } = render(
+      <WorkspaceHeader
+        commandPalette={<button type="button">Jump to feature or packet</button>}
+        delivery={workspace.delivery}
+        health={workspace.health}
+        meta={workspace.meta}
+        shellState="ready"
+        sourceSwitcher={<div>Runtime docs</div>}
+      />
+    )
+
+    const headerCard = container.querySelector("[data-slot='card']")
+
+    expect(headerCard).not.toBeNull()
+    expect(
+      within(headerCard as HTMLElement).getByRole("img", {
+        name: "Spec-Driven Docs Viewer logo",
+      })
+    ).toHaveAttribute("src", "/logo.svg")
+  })
+
+  test("aligns updated and source metadata to the same baseline with matching type scale", () => {
+    const workspace = createWorkspace()
+
+    const { container } = render(
+      <WorkspaceHeader
+        commandPalette={<button type="button">Jump to feature or packet</button>}
+        delivery={workspace.delivery}
+        health={workspace.health}
+        meta={workspace.meta}
+        shellState="ready"
+        sourceSwitcher={<div>Runtime docs</div>}
+      />
+    )
+
+    const headerCard = container.querySelector("[data-slot='card']")
+    const headerWithin = within(headerCard as HTMLElement)
+    const updatedRow = headerWithin.getByText("Updated").closest("div")
+    const sourceRow = headerWithin.getByText("Source").closest("div")
+
+    expect(headerCard).not.toBeNull()
+    expect(updatedRow).toHaveClass("items-end")
+    expect(sourceRow).toHaveClass("items-end")
+    expect(headerWithin.getByText("Updated")).toHaveClass("text-xs", "leading-none")
+    expect(headerWithin.getByText("Source")).toHaveClass("text-xs", "leading-none")
+    expect(headerWithin.getByText("2026-04-17")).toHaveClass("text-xs", "leading-none")
+    expect(
+      headerWithin.getByText("Runtime docs", { selector: "span" })
+    ).toHaveClass("text-xs", "leading-none")
+  })
+
   test.each([
     ["ok", "secondary"],
     ["warning", "outline"],
