@@ -118,6 +118,46 @@ describe("viewer surface contrast", () => {
     )
   })
 
+  test("uses lightweight column dividers instead of boxed lane cards", () => {
+    const feature = createFeature()
+
+    const { container } = render(
+      <FeatureBoard
+        error={null}
+        features={[
+          {
+            ...feature,
+            id: "planned-feature",
+            status: "planned",
+            title: "Planned Feature",
+          },
+          {
+            ...feature,
+            id: "ready-feature",
+            status: "ready",
+            title: "Ready Feature",
+          },
+        ]}
+        isLoading={false}
+        selectedFeatureId={null}
+        onSelectFeature={() => undefined}
+      />
+    )
+
+    const boardWithin = within(container)
+    const plannedLane = boardWithin
+      .getByRole("heading", { name: "planned" })
+      .closest("section")
+    const readyLane = boardWithin
+      .getByRole("heading", { name: "ready" })
+      .closest("section")
+
+    expect(plannedLane).not.toBeNull()
+    expect(readyLane).not.toBeNull()
+    expect(plannedLane).not.toHaveClass("rounded-lg", "border", "bg-muted/15")
+    expect(readyLane).toHaveClass("border-l", "border-border/60")
+  })
+
   test("keeps packet selection accent-surface scoped to the selected packet", () => {
     const selectedPacket = createPacket()
     const unselectedPacket = createPacketVariant({
