@@ -45,6 +45,7 @@ export interface PacketRecord {
   status: Status
   owner: string
   path: string
+  implementation_prompt?: string
 }
 
 export interface DeliveryState {

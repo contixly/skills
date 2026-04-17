@@ -510,6 +510,24 @@ function renderPacketMarkdown(packet) {
   ].join("\n");
 }
 
+function buildImplementationPrompt(packet, featurePath) {
+  const packetPath = `docs/${packet.path}`;
+  const parts = [
+    `Use the relevant skills to implement packet ${packet.id} (${packet.title}) by following the task intent in ${packetPath}.`
+  ];
+
+  if (featurePath) {
+    parts.push(`Start by reading docs/${featurePath} and ${packetPath}.`);
+    parts.push(`Implement only this packet for feature ${packet.feature}.`);
+  } else {
+    parts.push(`Start by reading ${packetPath}.`);
+    parts.push("Implement only this packet.");
+  }
+
+  parts.push("Do not expand scope beyond the packet.");
+  return parts.join(" ");
+}
+
 function denseFeatureRecords() {
   return Array.from({ length: 24 }, (_, index) => {
     const version = versions[index % versions.length];
@@ -628,7 +646,8 @@ async function buildDensePortfolio() {
       version: task.version,
       status: task.status,
       owner: task.owner,
-      path: taskPath
+      path: taskPath,
+      implementation_prompt: buildImplementationPrompt({ ...task, path: taskPath }, features.find((feature) => feature.id === task.feature)?.path)
     })),
     generated_from: "docs"
   });
@@ -776,7 +795,8 @@ async function buildStaleAndBroken() {
       version: task.version,
       status: task.status,
       owner: task.owner,
-      path: taskPath
+      path: taskPath,
+      implementation_prompt: buildImplementationPrompt({ ...task, path: taskPath }, features.find((feature) => feature.id === task.feature)?.path)
     })),
     generated_from: "docs"
   });
@@ -893,7 +913,8 @@ async function buildEmptyOrMinimal() {
       version: task.version,
       status: task.status,
       owner: task.owner,
-      path: taskPath
+      path: taskPath,
+      implementation_prompt: buildImplementationPrompt({ ...task, path: taskPath }, features.find((feature) => feature.id === task.feature)?.path)
     })),
     generated_from: "docs"
   });

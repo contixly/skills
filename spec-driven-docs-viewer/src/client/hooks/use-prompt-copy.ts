@@ -18,6 +18,35 @@ function createEmptyCopyState(): PromptCopyState {
   }
 }
 
+async function copyWithFallback(text: string) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text)
+      return
+    }
+  } catch {
+    // Fall through to the legacy document copy path for restricted webviews.
+  }
+
+  const textarea = document.createElement("textarea")
+  textarea.value = text
+  textarea.setAttribute("readonly", "true")
+  textarea.style.position = "fixed"
+  textarea.style.top = "0"
+  textarea.style.left = "-9999px"
+  textarea.style.opacity = "0"
+  document.body.appendChild(textarea)
+  textarea.focus()
+  textarea.select()
+
+  const copied = document.execCommand("copy")
+  document.body.removeChild(textarea)
+
+  if (!copied) {
+    throw new Error("Clipboard unavailable")
+  }
+}
+
 export function usePromptCopy() {
   const [copyState, setCopyState] = useState<PromptCopyState>(
     createEmptyCopyState
@@ -51,12 +80,7 @@ export function usePromptCopy() {
         return
       }
 
-      const clipboard = navigator.clipboard?.writeText
-      if (!clipboard) {
-        throw new Error("Clipboard unavailable")
-      }
-
-      await clipboard(payload.prompt)
+      await copyWithFallback(payload.prompt)
       if (requestVersion !== requestVersionRef.current) {
         return
       }

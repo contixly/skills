@@ -7,7 +7,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-smart-sync-01.md"
+      "path": "versions/v1/iterations/v1-smart-sync-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md. Start by reading docs/versions/v1/features/smart-sync.md and docs/versions/v1/iterations/v1-smart-sync-01.md. Implement only this packet for feature smart-sync. Do not expand scope beyond the packet."
     },
     {
       "id": "review-queue-01",

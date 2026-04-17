@@ -59,6 +59,9 @@ describe("loadWorkspaceDocs", () => {
     expect(workspace.packetsByFeature["smart-sync"].map((packet) => packet.id)).toEqual([
       "v1-smart-sync-01",
     ])
+    expect(workspace.packets.find((packet) => packet.id === "v1-smart-sync-01")?.implementation_prompt).toBe(
+      "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md. Start by reading docs/versions/v1/features/smart-sync.md and docs/versions/v1/iterations/v1-smart-sync-01.md. Implement only this packet for feature smart-sync. Do not expand scope beyond the packet.",
+    )
     expect(workspace.delivery.branch).toBe("feature/spec-docs")
   })
 

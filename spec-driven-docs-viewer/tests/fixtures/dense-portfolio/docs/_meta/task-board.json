@@ -7,7 +7,8 @@
       "version": "mvp",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-01-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-01 (Packet 1 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-01.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-01.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-01-02",
@@ -16,7 +17,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-01-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-02 (Packet 2 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-02.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-02.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-01-03",
@@ -25,7 +27,8 @@
       "version": "mvp",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-01-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-03 (Packet 3 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-03.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-03.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-01-04",
@@ -34,7 +37,8 @@
       "version": "mvp",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-01-04.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-04 (Packet 4 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-04.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-04.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-01-05",
@@ -43,7 +47,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-01-05.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-05 (Packet 5 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-05.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-05.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-01-06",
@@ -52,7 +57,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-01-06.md"
+      "path": "versions/mvp/iterations/mvp-feature-01-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-01-06 (Packet 6 for Platform Capability 1) by following the task intent in docs/versions/mvp/iterations/mvp-feature-01-06.md. Start by reading docs/versions/mvp/features/feature-01.md and docs/versions/mvp/iterations/mvp-feature-01-06.md. Implement only this packet for feature feature-01. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-02-01",
@@ -61,7 +67,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-02-01.md"
+      "path": "versions/v1/iterations/v1-feature-02-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-02-01 (Packet 1 for Intake Capability 2) by following the task intent in docs/versions/v1/iterations/v1-feature-02-01.md. Start by reading docs/versions/v1/features/feature-02.md and docs/versions/v1/iterations/v1-feature-02-01.md. Implement only this packet for feature feature-02. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-02-02",
@@ -70,7 +77,8 @@
       "version": "v1",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-02-02.md"
+      "path": "versions/v1/iterations/v1-feature-02-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-02-02 (Packet 2 for Intake Capability 2) by following the task intent in docs/versions/v1/iterations/v1-feature-02-02.md. Start by reading docs/versions/v1/features/feature-02.md and docs/versions/v1/iterations/v1-feature-02-02.md. Implement only this packet for feature feature-02. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-02-03",
@@ -79,7 +87,8 @@
       "version": "v1",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-02-03.md"
+      "path": "versions/v1/iterations/v1-feature-02-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-02-03 (Packet 3 for Intake Capability 2) by following the task intent in docs/versions/v1/iterations/v1-feature-02-03.md. Start by reading docs/versions/v1/features/feature-02.md and docs/versions/v1/iterations/v1-feature-02-03.md. Implement only this packet for feature feature-02. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-03-01",
@@ -88,7 +97,8 @@
       "version": "v2",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-03-01.md"
+      "path": "versions/v2/iterations/v2-feature-03-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-03-01 (Packet 1 for Review Capability 3) by following the task intent in docs/versions/v2/iterations/v2-feature-03-01.md. Start by reading docs/versions/v2/features/feature-03.md and docs/versions/v2/iterations/v2-feature-03-01.md. Implement only this packet for feature feature-03. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-03-02",
@@ -97,7 +107,8 @@
       "version": "v2",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-03-02.md"
+      "path": "versions/v2/iterations/v2-feature-03-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-03-02 (Packet 2 for Review Capability 3) by following the task intent in docs/versions/v2/iterations/v2-feature-03-02.md. Start by reading docs/versions/v2/features/feature-03.md and docs/versions/v2/iterations/v2-feature-03-02.md. Implement only this packet for feature feature-03. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-03-03",
@@ -106,7 +117,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-03-03.md"
+      "path": "versions/v2/iterations/v2-feature-03-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-03-03 (Packet 3 for Review Capability 3) by following the task intent in docs/versions/v2/iterations/v2-feature-03-03.md. Start by reading docs/versions/v2/features/feature-03.md and docs/versions/v2/iterations/v2-feature-03-03.md. Implement only this packet for feature feature-03. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-04-01",
@@ -115,7 +127,8 @@
       "version": "mvp",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-04-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-04-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-04-01 (Packet 1 for Delivery Capability 4) by following the task intent in docs/versions/mvp/iterations/mvp-feature-04-01.md. Start by reading docs/versions/mvp/features/feature-04.md and docs/versions/mvp/iterations/mvp-feature-04-01.md. Implement only this packet for feature feature-04. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-04-02",
@@ -124,7 +137,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-04-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-04-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-04-02 (Packet 2 for Delivery Capability 4) by following the task intent in docs/versions/mvp/iterations/mvp-feature-04-02.md. Start by reading docs/versions/mvp/features/feature-04.md and docs/versions/mvp/iterations/mvp-feature-04-02.md. Implement only this packet for feature feature-04. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-04-03",
@@ -133,7 +147,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-04-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-04-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-04-03 (Packet 3 for Delivery Capability 4) by following the task intent in docs/versions/mvp/iterations/mvp-feature-04-03.md. Start by reading docs/versions/mvp/features/feature-04.md and docs/versions/mvp/iterations/mvp-feature-04-03.md. Implement only this packet for feature feature-04. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-01",
@@ -142,7 +157,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-05-01.md"
+      "path": "versions/v1/iterations/v1-feature-05-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-01 (Packet 1 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-01.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-01.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-02",
@@ -151,7 +167,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-05-02.md"
+      "path": "versions/v1/iterations/v1-feature-05-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-02 (Packet 2 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-02.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-02.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-03",
@@ -160,7 +177,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-05-03.md"
+      "path": "versions/v1/iterations/v1-feature-05-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-03 (Packet 3 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-03.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-03.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-04",
@@ -169,7 +187,8 @@
       "version": "v1",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-05-04.md"
+      "path": "versions/v1/iterations/v1-feature-05-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-04 (Packet 4 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-04.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-04.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-05",
@@ -178,7 +197,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-05-05.md"
+      "path": "versions/v1/iterations/v1-feature-05-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-05 (Packet 5 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-05.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-05.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-05-06",
@@ -187,7 +207,8 @@
       "version": "v1",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-05-06.md"
+      "path": "versions/v1/iterations/v1-feature-05-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-05-06 (Packet 6 for Billing Capability 5) by following the task intent in docs/versions/v1/iterations/v1-feature-05-06.md. Start by reading docs/versions/v1/features/feature-05.md and docs/versions/v1/iterations/v1-feature-05-06.md. Implement only this packet for feature feature-05. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-06-01",
@@ -196,7 +217,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-06-01.md"
+      "path": "versions/v2/iterations/v2-feature-06-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-06-01 (Packet 1 for Analytics Capability 6) by following the task intent in docs/versions/v2/iterations/v2-feature-06-01.md. Start by reading docs/versions/v2/features/feature-06.md and docs/versions/v2/iterations/v2-feature-06-01.md. Implement only this packet for feature feature-06. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-06-02",
@@ -205,7 +227,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-06-02.md"
+      "path": "versions/v2/iterations/v2-feature-06-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-06-02 (Packet 2 for Analytics Capability 6) by following the task intent in docs/versions/v2/iterations/v2-feature-06-02.md. Start by reading docs/versions/v2/features/feature-06.md and docs/versions/v2/iterations/v2-feature-06-02.md. Implement only this packet for feature feature-06. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-06-03",
@@ -214,7 +237,8 @@
       "version": "v2",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-06-03.md"
+      "path": "versions/v2/iterations/v2-feature-06-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-06-03 (Packet 3 for Analytics Capability 6) by following the task intent in docs/versions/v2/iterations/v2-feature-06-03.md. Start by reading docs/versions/v2/features/feature-06.md and docs/versions/v2/iterations/v2-feature-06-03.md. Implement only this packet for feature feature-06. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-07-01",
@@ -223,7 +247,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-07-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-07-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-07-01 (Packet 1 for Support Capability 7) by following the task intent in docs/versions/mvp/iterations/mvp-feature-07-01.md. Start by reading docs/versions/mvp/features/feature-07.md and docs/versions/mvp/iterations/mvp-feature-07-01.md. Implement only this packet for feature feature-07. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-07-02",
@@ -232,7 +257,8 @@
       "version": "mvp",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-07-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-07-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-07-02 (Packet 2 for Support Capability 7) by following the task intent in docs/versions/mvp/iterations/mvp-feature-07-02.md. Start by reading docs/versions/mvp/features/feature-07.md and docs/versions/mvp/iterations/mvp-feature-07-02.md. Implement only this packet for feature feature-07. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-07-03",
@@ -241,7 +267,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-07-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-07-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-07-03 (Packet 3 for Support Capability 7) by following the task intent in docs/versions/mvp/iterations/mvp-feature-07-03.md. Start by reading docs/versions/mvp/features/feature-07.md and docs/versions/mvp/iterations/mvp-feature-07-03.md. Implement only this packet for feature feature-07. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-08-01",
@@ -250,7 +277,8 @@
       "version": "v1",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-08-01.md"
+      "path": "versions/v1/iterations/v1-feature-08-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-08-01 (Packet 1 for Platform Capability 8) by following the task intent in docs/versions/v1/iterations/v1-feature-08-01.md. Start by reading docs/versions/v1/features/feature-08.md and docs/versions/v1/iterations/v1-feature-08-01.md. Implement only this packet for feature feature-08. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-08-02",
@@ -259,7 +287,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-08-02.md"
+      "path": "versions/v1/iterations/v1-feature-08-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-08-02 (Packet 2 for Platform Capability 8) by following the task intent in docs/versions/v1/iterations/v1-feature-08-02.md. Start by reading docs/versions/v1/features/feature-08.md and docs/versions/v1/iterations/v1-feature-08-02.md. Implement only this packet for feature feature-08. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-08-03",
@@ -268,7 +297,8 @@
       "version": "v1",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-08-03.md"
+      "path": "versions/v1/iterations/v1-feature-08-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-08-03 (Packet 3 for Platform Capability 8) by following the task intent in docs/versions/v1/iterations/v1-feature-08-03.md. Start by reading docs/versions/v1/features/feature-08.md and docs/versions/v1/iterations/v1-feature-08-03.md. Implement only this packet for feature feature-08. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-01",
@@ -277,7 +307,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-09-01.md"
+      "path": "versions/v2/iterations/v2-feature-09-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-01 (Packet 1 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-01.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-01.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-02",
@@ -286,7 +317,8 @@
       "version": "v2",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-09-02.md"
+      "path": "versions/v2/iterations/v2-feature-09-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-02 (Packet 2 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-02.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-02.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-03",
@@ -295,7 +327,8 @@
       "version": "v2",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-09-03.md"
+      "path": "versions/v2/iterations/v2-feature-09-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-03 (Packet 3 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-03.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-03.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-04",
@@ -304,7 +337,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-09-04.md"
+      "path": "versions/v2/iterations/v2-feature-09-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-04 (Packet 4 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-04.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-04.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-05",
@@ -313,7 +347,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-09-05.md"
+      "path": "versions/v2/iterations/v2-feature-09-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-05 (Packet 5 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-05.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-05.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-09-06",
@@ -322,7 +357,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-09-06.md"
+      "path": "versions/v2/iterations/v2-feature-09-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-09-06 (Packet 6 for Intake Capability 9) by following the task intent in docs/versions/v2/iterations/v2-feature-09-06.md. Start by reading docs/versions/v2/features/feature-09.md and docs/versions/v2/iterations/v2-feature-09-06.md. Implement only this packet for feature feature-09. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-10-01",
@@ -331,7 +367,8 @@
       "version": "mvp",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-10-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-10-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-10-01 (Packet 1 for Review Capability 10) by following the task intent in docs/versions/mvp/iterations/mvp-feature-10-01.md. Start by reading docs/versions/mvp/features/feature-10.md and docs/versions/mvp/iterations/mvp-feature-10-01.md. Implement only this packet for feature feature-10. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-10-02",
@@ -340,7 +377,8 @@
       "version": "mvp",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-10-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-10-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-10-02 (Packet 2 for Review Capability 10) by following the task intent in docs/versions/mvp/iterations/mvp-feature-10-02.md. Start by reading docs/versions/mvp/features/feature-10.md and docs/versions/mvp/iterations/mvp-feature-10-02.md. Implement only this packet for feature feature-10. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-10-03",
@@ -349,7 +387,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-10-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-10-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-10-03 (Packet 3 for Review Capability 10) by following the task intent in docs/versions/mvp/iterations/mvp-feature-10-03.md. Start by reading docs/versions/mvp/features/feature-10.md and docs/versions/mvp/iterations/mvp-feature-10-03.md. Implement only this packet for feature feature-10. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-11-01",
@@ -358,7 +397,8 @@
       "version": "v1",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-11-01.md"
+      "path": "versions/v1/iterations/v1-feature-11-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-11-01 (Packet 1 for Delivery Capability 11) by following the task intent in docs/versions/v1/iterations/v1-feature-11-01.md. Start by reading docs/versions/v1/features/feature-11.md and docs/versions/v1/iterations/v1-feature-11-01.md. Implement only this packet for feature feature-11. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-11-02",
@@ -367,7 +407,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-11-02.md"
+      "path": "versions/v1/iterations/v1-feature-11-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-11-02 (Packet 2 for Delivery Capability 11) by following the task intent in docs/versions/v1/iterations/v1-feature-11-02.md. Start by reading docs/versions/v1/features/feature-11.md and docs/versions/v1/iterations/v1-feature-11-02.md. Implement only this packet for feature feature-11. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-11-03",
@@ -376,7 +417,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-11-03.md"
+      "path": "versions/v1/iterations/v1-feature-11-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-11-03 (Packet 3 for Delivery Capability 11) by following the task intent in docs/versions/v1/iterations/v1-feature-11-03.md. Start by reading docs/versions/v1/features/feature-11.md and docs/versions/v1/iterations/v1-feature-11-03.md. Implement only this packet for feature feature-11. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-12-01",
@@ -385,7 +427,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-12-01.md"
+      "path": "versions/v2/iterations/v2-feature-12-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-12-01 (Packet 1 for Billing Capability 12) by following the task intent in docs/versions/v2/iterations/v2-feature-12-01.md. Start by reading docs/versions/v2/features/feature-12.md and docs/versions/v2/iterations/v2-feature-12-01.md. Implement only this packet for feature feature-12. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-12-02",
@@ -394,7 +437,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-12-02.md"
+      "path": "versions/v2/iterations/v2-feature-12-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-12-02 (Packet 2 for Billing Capability 12) by following the task intent in docs/versions/v2/iterations/v2-feature-12-02.md. Start by reading docs/versions/v2/features/feature-12.md and docs/versions/v2/iterations/v2-feature-12-02.md. Implement only this packet for feature feature-12. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-12-03",
@@ -403,7 +447,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-12-03.md"
+      "path": "versions/v2/iterations/v2-feature-12-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-12-03 (Packet 3 for Billing Capability 12) by following the task intent in docs/versions/v2/iterations/v2-feature-12-03.md. Start by reading docs/versions/v2/features/feature-12.md and docs/versions/v2/iterations/v2-feature-12-03.md. Implement only this packet for feature feature-12. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-01",
@@ -412,7 +457,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-13-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-01 (Packet 1 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-01.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-01.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-02",
@@ -421,7 +467,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-13-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-02 (Packet 2 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-02.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-02.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-03",
@@ -430,7 +477,8 @@
       "version": "mvp",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-13-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-03 (Packet 3 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-03.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-03.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-04",
@@ -439,7 +487,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-13-04.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-04 (Packet 4 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-04.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-04.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-05",
@@ -448,7 +497,8 @@
       "version": "mvp",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-13-05.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-05 (Packet 5 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-05.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-05.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-13-06",
@@ -457,7 +507,8 @@
       "version": "mvp",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-13-06.md"
+      "path": "versions/mvp/iterations/mvp-feature-13-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-13-06 (Packet 6 for Analytics Capability 13) by following the task intent in docs/versions/mvp/iterations/mvp-feature-13-06.md. Start by reading docs/versions/mvp/features/feature-13.md and docs/versions/mvp/iterations/mvp-feature-13-06.md. Implement only this packet for feature feature-13. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-14-01",
@@ -466,7 +517,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-14-01.md"
+      "path": "versions/v1/iterations/v1-feature-14-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-14-01 (Packet 1 for Support Capability 14) by following the task intent in docs/versions/v1/iterations/v1-feature-14-01.md. Start by reading docs/versions/v1/features/feature-14.md and docs/versions/v1/iterations/v1-feature-14-01.md. Implement only this packet for feature feature-14. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-14-02",
@@ -475,7 +527,8 @@
       "version": "v1",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-14-02.md"
+      "path": "versions/v1/iterations/v1-feature-14-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-14-02 (Packet 2 for Support Capability 14) by following the task intent in docs/versions/v1/iterations/v1-feature-14-02.md. Start by reading docs/versions/v1/features/feature-14.md and docs/versions/v1/iterations/v1-feature-14-02.md. Implement only this packet for feature feature-14. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-14-03",
@@ -484,7 +537,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-14-03.md"
+      "path": "versions/v1/iterations/v1-feature-14-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-14-03 (Packet 3 for Support Capability 14) by following the task intent in docs/versions/v1/iterations/v1-feature-14-03.md. Start by reading docs/versions/v1/features/feature-14.md and docs/versions/v1/iterations/v1-feature-14-03.md. Implement only this packet for feature feature-14. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-15-01",
@@ -493,7 +547,8 @@
       "version": "v2",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-15-01.md"
+      "path": "versions/v2/iterations/v2-feature-15-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-15-01 (Packet 1 for Platform Capability 15) by following the task intent in docs/versions/v2/iterations/v2-feature-15-01.md. Start by reading docs/versions/v2/features/feature-15.md and docs/versions/v2/iterations/v2-feature-15-01.md. Implement only this packet for feature feature-15. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-15-02",
@@ -502,7 +557,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-15-02.md"
+      "path": "versions/v2/iterations/v2-feature-15-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-15-02 (Packet 2 for Platform Capability 15) by following the task intent in docs/versions/v2/iterations/v2-feature-15-02.md. Start by reading docs/versions/v2/features/feature-15.md and docs/versions/v2/iterations/v2-feature-15-02.md. Implement only this packet for feature feature-15. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-15-03",
@@ -511,7 +567,8 @@
       "version": "v2",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-15-03.md"
+      "path": "versions/v2/iterations/v2-feature-15-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-15-03 (Packet 3 for Platform Capability 15) by following the task intent in docs/versions/v2/iterations/v2-feature-15-03.md. Start by reading docs/versions/v2/features/feature-15.md and docs/versions/v2/iterations/v2-feature-15-03.md. Implement only this packet for feature feature-15. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-16-01",
@@ -520,7 +577,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-16-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-16-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-16-01 (Packet 1 for Intake Capability 16) by following the task intent in docs/versions/mvp/iterations/mvp-feature-16-01.md. Start by reading docs/versions/mvp/features/feature-16.md and docs/versions/mvp/iterations/mvp-feature-16-01.md. Implement only this packet for feature feature-16. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-16-02",
@@ -529,7 +587,8 @@
       "version": "mvp",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-16-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-16-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-16-02 (Packet 2 for Intake Capability 16) by following the task intent in docs/versions/mvp/iterations/mvp-feature-16-02.md. Start by reading docs/versions/mvp/features/feature-16.md and docs/versions/mvp/iterations/mvp-feature-16-02.md. Implement only this packet for feature feature-16. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-16-03",
@@ -538,7 +597,8 @@
       "version": "mvp",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-16-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-16-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-16-03 (Packet 3 for Intake Capability 16) by following the task intent in docs/versions/mvp/iterations/mvp-feature-16-03.md. Start by reading docs/versions/mvp/features/feature-16.md and docs/versions/mvp/iterations/mvp-feature-16-03.md. Implement only this packet for feature feature-16. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-01",
@@ -547,7 +607,8 @@
       "version": "v1",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-17-01.md"
+      "path": "versions/v1/iterations/v1-feature-17-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-01 (Packet 1 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-01.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-01.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-02",
@@ -556,7 +617,8 @@
       "version": "v1",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-17-02.md"
+      "path": "versions/v1/iterations/v1-feature-17-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-02 (Packet 2 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-02.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-02.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-03",
@@ -565,7 +627,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-17-03.md"
+      "path": "versions/v1/iterations/v1-feature-17-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-03 (Packet 3 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-03.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-03.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-04",
@@ -574,7 +637,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-17-04.md"
+      "path": "versions/v1/iterations/v1-feature-17-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-04 (Packet 4 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-04.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-04.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-05",
@@ -583,7 +647,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-17-05.md"
+      "path": "versions/v1/iterations/v1-feature-17-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-05 (Packet 5 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-05.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-05.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-17-06",
@@ -592,7 +657,8 @@
       "version": "v1",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-17-06.md"
+      "path": "versions/v1/iterations/v1-feature-17-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-17-06 (Packet 6 for Review Capability 17) by following the task intent in docs/versions/v1/iterations/v1-feature-17-06.md. Start by reading docs/versions/v1/features/feature-17.md and docs/versions/v1/iterations/v1-feature-17-06.md. Implement only this packet for feature feature-17. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-18-01",
@@ -601,7 +667,8 @@
       "version": "v2",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-18-01.md"
+      "path": "versions/v2/iterations/v2-feature-18-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-18-01 (Packet 1 for Delivery Capability 18) by following the task intent in docs/versions/v2/iterations/v2-feature-18-01.md. Start by reading docs/versions/v2/features/feature-18.md and docs/versions/v2/iterations/v2-feature-18-01.md. Implement only this packet for feature feature-18. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-18-02",
@@ -610,7 +677,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-18-02.md"
+      "path": "versions/v2/iterations/v2-feature-18-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-18-02 (Packet 2 for Delivery Capability 18) by following the task intent in docs/versions/v2/iterations/v2-feature-18-02.md. Start by reading docs/versions/v2/features/feature-18.md and docs/versions/v2/iterations/v2-feature-18-02.md. Implement only this packet for feature feature-18. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-18-03",
@@ -619,7 +687,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-18-03.md"
+      "path": "versions/v2/iterations/v2-feature-18-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-18-03 (Packet 3 for Delivery Capability 18) by following the task intent in docs/versions/v2/iterations/v2-feature-18-03.md. Start by reading docs/versions/v2/features/feature-18.md and docs/versions/v2/iterations/v2-feature-18-03.md. Implement only this packet for feature feature-18. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-19-01",
@@ -628,7 +697,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-19-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-19-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-19-01 (Packet 1 for Billing Capability 19) by following the task intent in docs/versions/mvp/iterations/mvp-feature-19-01.md. Start by reading docs/versions/mvp/features/feature-19.md and docs/versions/mvp/iterations/mvp-feature-19-01.md. Implement only this packet for feature feature-19. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-19-02",
@@ -637,7 +707,8 @@
       "version": "mvp",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-19-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-19-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-19-02 (Packet 2 for Billing Capability 19) by following the task intent in docs/versions/mvp/iterations/mvp-feature-19-02.md. Start by reading docs/versions/mvp/features/feature-19.md and docs/versions/mvp/iterations/mvp-feature-19-02.md. Implement only this packet for feature feature-19. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-19-03",
@@ -646,7 +717,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-19-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-19-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-19-03 (Packet 3 for Billing Capability 19) by following the task intent in docs/versions/mvp/iterations/mvp-feature-19-03.md. Start by reading docs/versions/mvp/features/feature-19.md and docs/versions/mvp/iterations/mvp-feature-19-03.md. Implement only this packet for feature feature-19. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-20-01",
@@ -655,7 +727,8 @@
       "version": "v1",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-20-01.md"
+      "path": "versions/v1/iterations/v1-feature-20-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-20-01 (Packet 1 for Analytics Capability 20) by following the task intent in docs/versions/v1/iterations/v1-feature-20-01.md. Start by reading docs/versions/v1/features/feature-20.md and docs/versions/v1/iterations/v1-feature-20-01.md. Implement only this packet for feature feature-20. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-20-02",
@@ -664,7 +737,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-20-02.md"
+      "path": "versions/v1/iterations/v1-feature-20-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-20-02 (Packet 2 for Analytics Capability 20) by following the task intent in docs/versions/v1/iterations/v1-feature-20-02.md. Start by reading docs/versions/v1/features/feature-20.md and docs/versions/v1/iterations/v1-feature-20-02.md. Implement only this packet for feature feature-20. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-20-03",
@@ -673,7 +747,8 @@
       "version": "v1",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-20-03.md"
+      "path": "versions/v1/iterations/v1-feature-20-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-20-03 (Packet 3 for Analytics Capability 20) by following the task intent in docs/versions/v1/iterations/v1-feature-20-03.md. Start by reading docs/versions/v1/features/feature-20.md and docs/versions/v1/iterations/v1-feature-20-03.md. Implement only this packet for feature feature-20. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-01",
@@ -682,7 +757,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-21-01.md"
+      "path": "versions/v2/iterations/v2-feature-21-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-01 (Packet 1 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-01.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-01.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-02",
@@ -691,7 +767,8 @@
       "version": "v2",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-21-02.md"
+      "path": "versions/v2/iterations/v2-feature-21-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-02 (Packet 2 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-02.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-02.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-03",
@@ -700,7 +777,8 @@
       "version": "v2",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-21-03.md"
+      "path": "versions/v2/iterations/v2-feature-21-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-03 (Packet 3 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-03.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-03.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-04",
@@ -709,7 +787,8 @@
       "version": "v2",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-21-04.md"
+      "path": "versions/v2/iterations/v2-feature-21-04.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-04 (Packet 4 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-04.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-04.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-05",
@@ -718,7 +797,8 @@
       "version": "v2",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-21-05.md"
+      "path": "versions/v2/iterations/v2-feature-21-05.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-05 (Packet 5 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-05.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-05.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-21-06",
@@ -727,7 +807,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-21-06.md"
+      "path": "versions/v2/iterations/v2-feature-21-06.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-21-06 (Packet 6 for Support Capability 21) by following the task intent in docs/versions/v2/iterations/v2-feature-21-06.md. Start by reading docs/versions/v2/features/feature-21.md and docs/versions/v2/iterations/v2-feature-21-06.md. Implement only this packet for feature feature-21. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-22-01",
@@ -736,7 +817,8 @@
       "version": "mvp",
       "status": "planned",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-22-01.md"
+      "path": "versions/mvp/iterations/mvp-feature-22-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-22-01 (Packet 1 for Platform Capability 22) by following the task intent in docs/versions/mvp/iterations/mvp-feature-22-01.md. Start by reading docs/versions/mvp/features/feature-22.md and docs/versions/mvp/iterations/mvp-feature-22-01.md. Implement only this packet for feature feature-22. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-22-02",
@@ -745,7 +827,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-feature-22-02.md"
+      "path": "versions/mvp/iterations/mvp-feature-22-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-22-02 (Packet 2 for Platform Capability 22) by following the task intent in docs/versions/mvp/iterations/mvp-feature-22-02.md. Start by reading docs/versions/mvp/features/feature-22.md and docs/versions/mvp/iterations/mvp-feature-22-02.md. Implement only this packet for feature feature-22. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-feature-22-03",
@@ -754,7 +837,8 @@
       "version": "mvp",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/mvp/iterations/mvp-feature-22-03.md"
+      "path": "versions/mvp/iterations/mvp-feature-22-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-feature-22-03 (Packet 3 for Platform Capability 22) by following the task intent in docs/versions/mvp/iterations/mvp-feature-22-03.md. Start by reading docs/versions/mvp/features/feature-22.md and docs/versions/mvp/iterations/mvp-feature-22-03.md. Implement only this packet for feature feature-22. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-23-01",
@@ -763,7 +847,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-23-01.md"
+      "path": "versions/v1/iterations/v1-feature-23-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-23-01 (Packet 1 for Intake Capability 23) by following the task intent in docs/versions/v1/iterations/v1-feature-23-01.md. Start by reading docs/versions/v1/features/feature-23.md and docs/versions/v1/iterations/v1-feature-23-01.md. Implement only this packet for feature feature-23. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-23-02",
@@ -772,7 +857,8 @@
       "version": "v1",
       "status": "in-progress",
       "owner": "unassigned",
-      "path": "versions/v1/iterations/v1-feature-23-02.md"
+      "path": "versions/v1/iterations/v1-feature-23-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-23-02 (Packet 2 for Intake Capability 23) by following the task intent in docs/versions/v1/iterations/v1-feature-23-02.md. Start by reading docs/versions/v1/features/feature-23.md and docs/versions/v1/iterations/v1-feature-23-02.md. Implement only this packet for feature feature-23. Do not expand scope beyond the packet."
     },
     {
       "id": "v1-feature-23-03",
@@ -781,7 +867,8 @@
       "version": "v1",
       "status": "done",
       "owner": "agent-a",
-      "path": "versions/v1/iterations/v1-feature-23-03.md"
+      "path": "versions/v1/iterations/v1-feature-23-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-feature-23-03 (Packet 3 for Intake Capability 23) by following the task intent in docs/versions/v1/iterations/v1-feature-23-03.md. Start by reading docs/versions/v1/features/feature-23.md and docs/versions/v1/iterations/v1-feature-23-03.md. Implement only this packet for feature feature-23. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-24-01",
@@ -790,7 +877,8 @@
       "version": "v2",
       "status": "in-progress",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-24-01.md"
+      "path": "versions/v2/iterations/v2-feature-24-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-24-01 (Packet 1 for Review Capability 24) by following the task intent in docs/versions/v2/iterations/v2-feature-24-01.md. Start by reading docs/versions/v2/features/feature-24.md and docs/versions/v2/iterations/v2-feature-24-01.md. Implement only this packet for feature feature-24. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-24-02",
@@ -799,7 +887,8 @@
       "version": "v2",
       "status": "done",
       "owner": "unassigned",
-      "path": "versions/v2/iterations/v2-feature-24-02.md"
+      "path": "versions/v2/iterations/v2-feature-24-02.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-24-02 (Packet 2 for Review Capability 24) by following the task intent in docs/versions/v2/iterations/v2-feature-24-02.md. Start by reading docs/versions/v2/features/feature-24.md and docs/versions/v2/iterations/v2-feature-24-02.md. Implement only this packet for feature feature-24. Do not expand scope beyond the packet."
     },
     {
       "id": "v2-feature-24-03",
@@ -808,7 +897,8 @@
       "version": "v2",
       "status": "blocked",
       "owner": "agent-a",
-      "path": "versions/v2/iterations/v2-feature-24-03.md"
+      "path": "versions/v2/iterations/v2-feature-24-03.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v2-feature-24-03 (Packet 3 for Review Capability 24) by following the task intent in docs/versions/v2/iterations/v2-feature-24-03.md. Start by reading docs/versions/v2/features/feature-24.md and docs/versions/v2/iterations/v2-feature-24-03.md. Implement only this packet for feature feature-24. Do not expand scope beyond the packet."
     }
   ],
   "generated_from": "docs"

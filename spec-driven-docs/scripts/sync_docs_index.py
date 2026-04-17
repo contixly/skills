@@ -72,6 +72,34 @@ def split_values(raw: str | None) -> list[str]:
     return [item.strip() for item in raw.split(",") if item.strip()]
 
 
+def build_implementation_prompt(
+    *,
+    packet_id: str,
+    packet_title: str,
+    packet_path: str,
+    feature_id: str,
+    feature_path: str | None,
+) -> str:
+    docs_packet_path = f"docs/{packet_path}"
+
+    parts = [
+        (
+            f"Use the relevant skills to implement packet {packet_id} "
+            f"({packet_title}) by following the task intent in {docs_packet_path}."
+        )
+    ]
+
+    if feature_path:
+        parts.append(f"Start by reading docs/{feature_path} and {docs_packet_path}.")
+        parts.append(f"Implement only this packet for feature {feature_id}.")
+    else:
+        parts.append(f"Start by reading {docs_packet_path}.")
+        parts.append("Implement only this packet.")
+
+    parts.append("Do not expand scope beyond the packet.")
+    return " ".join(parts)
+
+
 def collect_features(docs_dir: Path) -> list[dict[str, object]]:
     features: list[dict[str, object]] = []
     for path in sorted((docs_dir / "versions").glob("*/features/*.md")):
@@ -93,21 +121,31 @@ def collect_features(docs_dir: Path) -> list[dict[str, object]]:
     return features
 
 
-def collect_tasks(docs_dir: Path) -> list[dict[str, object]]:
+def collect_tasks(docs_dir: Path, feature_paths: dict[str, str]) -> list[dict[str, object]]:
     tasks: list[dict[str, object]] = []
     for path in sorted((docs_dir / "versions").glob("*/iterations/*.md")):
         metadata = parse_metadata(path)
         if "id" not in metadata:
             continue
+        packet_title = parse_title(path, "Packet:")
+        packet_path = to_posix_relative_path(path, docs_dir)
+        feature_id = metadata.get("feature", "unknown")
         tasks.append(
             {
                 "id": metadata["id"],
-                "title": parse_title(path, "Packet:"),
-                "feature": metadata.get("feature", "unknown"),
+                "title": packet_title,
+                "feature": feature_id,
                 "version": metadata.get("version", path.parent.parent.name),
                 "status": metadata.get("status", "unknown"),
                 "owner": metadata.get("owner", "unassigned"),
-                "path": to_posix_relative_path(path, docs_dir),
+                "path": packet_path,
+                "implementation_prompt": build_implementation_prompt(
+                    packet_id=metadata["id"],
+                    packet_title=packet_title,
+                    packet_path=packet_path,
+                    feature_id=feature_id,
+                    feature_path=feature_paths.get(feature_id),
+                ),
             }
         )
     return tasks
@@ -171,7 +209,11 @@ def main() -> None:
     meta_dir.mkdir(parents=True, exist_ok=True)
 
     features = collect_features(docs_dir)
-    tasks = collect_tasks(docs_dir)
+    feature_paths = {
+        str(feature["id"]): str(feature["path"])
+        for feature in features
+    }
+    tasks = collect_tasks(docs_dir, feature_paths)
     delivery_state = collect_delivery_state(docs_dir, features, tasks)
 
     feature_index = {"features": features, "generated_from": display_path(docs_dir)}

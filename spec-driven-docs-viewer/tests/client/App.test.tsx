@@ -234,8 +234,113 @@ describe("App", () => {
 
   test("renders the feature board, drills into packet view, and copies prompt", async () => {
     const user = userEvent.setup()
-    const writeText = vi.fn()
+    const clipboard = {
+      written: "",
+      async writeText(text: string) {
+        this.written = text
+      },
+    }
     stubResizeObserver()
+    const workspace = createWorkspacePayload({
+      features: [
+        {
+          id: "smart-sync",
+          title: "Shared Spec Editing",
+          module: "collaboration",
+          version: "v1",
+          status: "in-progress",
+          priority: "high",
+          depends_on: ["realtime-foundation"],
+          path: "versions/v1/features/smart-sync.md",
+          packet_counts: { ready: 1 },
+        },
+      ],
+      packets: [
+        {
+          id: "v1-smart-sync-01",
+          title: "Presence and Edit Locking",
+          feature: "smart-sync",
+          version: "v1",
+          status: "ready",
+          owner: "agent-a",
+          path: "versions/v1/iterations/v1-smart-sync-01.md",
+          implementation_prompt:
+            "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md.",
+        },
+      ],
+      packetsByFeature: {
+        "smart-sync": [
+          {
+            id: "v1-smart-sync-01",
+            title: "Presence and Edit Locking",
+            feature: "smart-sync",
+            version: "v1",
+            status: "ready",
+            owner: "agent-a",
+            path: "versions/v1/iterations/v1-smart-sync-01.md",
+            implementation_prompt:
+              "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md.",
+          },
+        ],
+      },
+    })
+    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+      const url = String(input)
+
+      if (url.endsWith("/api/workspace")) {
+        return new Response(JSON.stringify(workspace))
+      }
+
+      if (url.endsWith("/api/prompt/v1-smart-sync-01")) {
+        return new Response(
+          JSON.stringify({
+            source: "packet",
+            prompt: "Implement packet v1-smart-sync-01 only.",
+          })
+        )
+      }
+
+      return new Response("Not found", { status: 404 })
+    })
+
+    vi.stubGlobal("fetch", fetchMock)
+    vi.stubGlobal("navigator", {
+      clipboard,
+    })
+
+    render(<App />)
+
+    await screen.findByText("Shared Spec Editing")
+
+    await user.click(
+      screen.getByRole("button", { name: /Shared Spec Editing/i })
+    )
+    await user.click(
+      screen.getByRole("button", { name: /Presence and Edit Locking/i })
+    )
+
+    expect(
+      screen.getByText(
+        "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md."
+      )
+    ).toBeInTheDocument()
+
+    await user.click(screen.getByRole("button", { name: "Copy Prompt" }))
+
+    expect(clipboard.written).toBe(
+      "Implement packet v1-smart-sync-01 only."
+    )
+    expect(fetchMock).toHaveBeenCalledWith("/api/prompt/v1-smart-sync-01")
+  })
+
+  test("falls back to document copy when navigator clipboard writeText fails", async () => {
+    const user = userEvent.setup()
+    stubResizeObserver()
+    const execCommand = vi.fn((commandId: string) => commandId === "copy")
+    Object.defineProperty(document, "execCommand", {
+      configurable: true,
+      value: execCommand,
+    })
     const workspace = createWorkspacePayload({
       features: [
         {
@@ -296,7 +401,11 @@ describe("App", () => {
 
     vi.stubGlobal("fetch", fetchMock)
     vi.stubGlobal("navigator", {
-      clipboard: { writeText },
+      clipboard: {
+        writeText: vi.fn(async () => {
+          throw new Error("denied")
+        }),
+      },
     })
 
     render(<App />)
@@ -311,10 +420,10 @@ describe("App", () => {
     )
     await user.click(screen.getByRole("button", { name: "Copy Prompt" }))
 
-    expect(writeText).toHaveBeenCalledWith(
-      "Implement packet v1-smart-sync-01 only."
-    )
-    expect(fetchMock).toHaveBeenCalledWith("/api/prompt/v1-smart-sync-01")
+    expect(execCommand).toHaveBeenCalledWith("copy")
+    expect(
+      await screen.findByText("Copied packet prompt")
+    ).toBeInTheDocument()
   })
 
   test("switches dev sources and reloads the workspace snapshot", async () => {

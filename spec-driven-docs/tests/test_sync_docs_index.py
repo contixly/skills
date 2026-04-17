@@ -98,6 +98,17 @@ class SyncDocsIndexTests(unittest.TestCase):
             self.assertEqual(feature_index["features"][0]["title"], "Shared Spec Editing")
             self.assertEqual(feature_index["features"][0]["depends_on"], ["realtime-foundation", "comments"])
             self.assertEqual(task_board["tasks"][0]["title"], "Presence and Edit Locking")
+            self.assertEqual(
+                task_board["tasks"][0]["implementation_prompt"],
+                (
+                    "Use the relevant skills to implement packet v1-smart-sync-01 "
+                    "(Presence and Edit Locking) by following the task intent in "
+                    "docs/versions/v1/iterations/v1-smart-sync-01.md. Start by reading "
+                    "docs/versions/v1/features/smart-sync.md and "
+                    "docs/versions/v1/iterations/v1-smart-sync-01.md. Implement only this "
+                    "packet for feature smart-sync. Do not expand scope beyond the packet."
+                ),
+            )
             self.assertEqual(delivery_state["branch"], "feature/spec-docs")
             self.assertEqual(delivery_state["implemented_versions"], ["mvp"])
             self.assertEqual(delivery_state["in_progress_features"], ["smart-sync"])

@@ -43,7 +43,7 @@ Start the local read-only board from any repository that already contains `spec-
 npx @contixly/spec-driven-docs-viewer
 ```
 
-The command reads `docs/_meta/*.json` and packet markdown from the current repository, starts a local server, and prints a URL for the viewer so you can inspect feature status, drill into packet state, and copy the next implementation prompt.
+The command reads `docs/_meta/*.json` and packet markdown from the current repository, starts a local server, and prints a URL for the viewer so you can inspect feature status, drill into packet state, and copy the next implementation prompt. The primary prompt source is `docs/_meta/task-board.json`, where each packet record includes an `implementation_prompt`.
 
 ## Best Fit
 

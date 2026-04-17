@@ -18,12 +18,11 @@ async function importPromptModule() {
 
 describe("buildPromptPayload", () => {
   afterEach(() => {
-    vi.doUnmock("node:fs/promises")
     vi.restoreAllMocks()
     vi.resetModules()
   })
 
-  test("extracts the suggested prompt from packet markdown when present", async () => {
+  test("returns the implementation prompt from packet metadata when present", async () => {
     const workspaceRoot = fixturePath("basic")
     const workspace = await loadWorkspaceDocs({
       workspaceRoot,
@@ -39,11 +38,11 @@ describe("buildPromptPayload", () => {
 
     expect(payload.source).toBe("packet")
     expect(payload.prompt).toBe(
-      "Use $spec-driven-docs to sync documentation after implementing packet v1-smart-sync-01.",
+      "Use the relevant skills to implement packet v1-smart-sync-01 (Presence and Edit Locking) by following the task intent in docs/versions/v1/iterations/v1-smart-sync-01.md. Start by reading docs/versions/v1/features/smart-sync.md and docs/versions/v1/iterations/v1-smart-sync-01.md. Implement only this packet for feature smart-sync. Do not expand scope beyond the packet.",
     )
   })
 
-  test("generates a fallback prompt when packet markdown has no suggested prompt", async () => {
+  test("generates a fallback prompt when packet metadata has no implementation prompt", async () => {
     const workspaceRoot = fixturePath("basic")
     const workspace = await loadWorkspaceDocs({
       workspaceRoot,
@@ -59,33 +58,7 @@ describe("buildPromptPayload", () => {
 
     expect(payload.source).toBe("generated")
     expect(payload.prompt).toBe(
-      "Use $spec-driven-docs to sync documentation after implementing packet review-queue-01. Update packet and feature statuses, refresh current-state, update architecture if needed, and regenerate docs/_meta indexes.",
+      "Use the relevant skills to implement packet review-queue-01 (Review Inbox Triage) by following the task intent in docs/versions/mvp/iterations/review-queue-01.md. Start by reading docs/versions/mvp/features/review-queue.md and docs/versions/mvp/iterations/review-queue-01.md. Implement only this packet for feature review-queue. Do not expand scope beyond the packet.",
     )
-  })
-
-  test("propagates unexpected markdown read failures", async () => {
-    const workspaceRoot = fixturePath("basic")
-    const workspace = await loadWorkspaceDocs({
-      workspaceRoot,
-      ...runtimeMeta,
-    })
-    vi.resetModules()
-    vi.doMock("node:fs/promises", async () => {
-      const actual = await vi.importActual<typeof import("node:fs/promises")>("node:fs/promises")
-
-      return {
-        ...actual,
-        readFile: vi.fn().mockRejectedValueOnce(new Error("boom")),
-      }
-    })
-    const { buildPromptPayload } = await importPromptModule()
-
-    await expect(
-      buildPromptPayload({
-        workspaceRoot,
-        workspace,
-        packetId: "v1-smart-sync-01",
-      }),
-    ).rejects.toThrow("boom")
   })
 })

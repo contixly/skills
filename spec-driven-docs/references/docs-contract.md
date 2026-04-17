@@ -50,7 +50,7 @@ docs/
 - `docs/versions/<version>/features/<feature-id>.md`: business spec for one feature using the numbered feature pattern from `references/feature-spec-pattern.md`.
 - `docs/versions/<version>/iterations/<packet-id>.md`: one implementation-ready packet for agents.
 - `docs/_meta/feature-index.json`: compact feature registry for other skills and trackers.
-- `docs/_meta/task-board.json`: compact packet registry for other skills and trackers.
+- `docs/_meta/task-board.json`: compact packet registry for other skills and trackers, including the implementation prompt used by the viewer and downstream agents.
 - `docs/_meta/delivery-state.json`: compact branch-state export derived from `current-state.md` plus feature and packet statuses.
 
 ## Top-level documentation rules
@@ -119,6 +119,21 @@ Use comma-separated lists for implemented versions, in-progress features, and re
   - the architecture doc
   - the roadmap
   - any module or passport files needed for context
+
+## JSON metadata minimum
+
+`docs/_meta/task-board.json` should export one compact record per packet with at least:
+
+- `id`
+- `title`
+- `feature`
+- `version`
+- `status`
+- `owner`
+- `path`
+- `implementation_prompt`
+
+`implementation_prompt` should be a ready-to-paste starter prompt for an implementation agent. It should point at the packet file, point at the parent feature file when known, and make the packet scope boundary explicit.
 
 ## Feature structure
 

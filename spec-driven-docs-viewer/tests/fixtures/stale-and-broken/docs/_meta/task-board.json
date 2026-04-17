@@ -7,7 +7,8 @@
       "version": "v1",
       "status": "ready",
       "owner": "agent-b",
-      "path": "versions/v1/iterations/v1-review-handoff-01.md"
+      "path": "versions/v1/iterations/v1-review-handoff-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet v1-review-handoff-01 (Review Handoff Baseline) by following the task intent in docs/versions/v1/iterations/v1-review-handoff-01.md. Start by reading docs/versions/v1/features/review-handoff.md and docs/versions/v1/iterations/v1-review-handoff-01.md. Implement only this packet for feature review-handoff. Do not expand scope beyond the packet."
     },
     {
       "id": "mvp-empty-checklist-01",
@@ -16,7 +17,8 @@
       "version": "mvp",
       "status": "planned",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/mvp-empty-checklist-01.md"
+      "path": "versions/mvp/iterations/mvp-empty-checklist-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet mvp-empty-checklist-01 (Empty Checklist Repair) by following the task intent in docs/versions/mvp/iterations/mvp-empty-checklist-01.md. Start by reading docs/versions/mvp/features/empty-checklist.md and docs/versions/mvp/iterations/mvp-empty-checklist-01.md. Implement only this packet for feature empty-checklist. Do not expand scope beyond the packet."
     }
   ],
   "generated_from": "docs"

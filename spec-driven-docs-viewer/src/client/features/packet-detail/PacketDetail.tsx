@@ -22,7 +22,7 @@ type CopyState = {
 
 function formatPromptSource(source: PromptPayload["source"] | null) {
   if (source === "packet") {
-    return "Copied from packet markdown"
+    return "Copied packet prompt"
   }
 
   if (source === "generated") {
@@ -110,6 +110,11 @@ export function PacketDetail({
             <p className="text-xs text-destructive">{copyError}</p>
           ) : copySource ? (
             <p className="text-xs text-muted-foreground">{copySource}</p>
+          ) : null}
+          {packet.implementation_prompt ? (
+            <blockquote className="rounded-md border-l-2 border-border/80 bg-muted/18 px-4 py-3 text-sm leading-6 text-foreground/92">
+              {packet.implementation_prompt}
+            </blockquote>
           ) : null}
         </div>
       </CardContent>

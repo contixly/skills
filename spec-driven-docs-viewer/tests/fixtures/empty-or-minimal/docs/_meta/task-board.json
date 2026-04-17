@@ -7,7 +7,8 @@
       "version": "mvp",
       "status": "ready",
       "owner": "unassigned",
-      "path": "versions/mvp/iterations/minimal-packet-01.md"
+      "path": "versions/mvp/iterations/minimal-packet-01.md",
+      "implementation_prompt": "Use the relevant skills to implement packet minimal-packet-01 (Minimal Packet Coverage) by following the task intent in docs/versions/mvp/iterations/minimal-packet-01.md. Start by reading docs/versions/mvp/features/minimal-feature.md and docs/versions/mvp/iterations/minimal-packet-01.md. Implement only this packet for feature minimal-feature. Do not expand scope beyond the packet."
     }
   ],
   "generated_from": "docs"

@@ -2,7 +2,7 @@
 
 Canonical implementation of `@contixly/spec-driven-docs-viewer`.
 
-This package serves the local viewer for `docs/_meta/*.json` indexes and packet markdown, with the same runtime contract used by the original viewer package while the shadcn/Tailwind shell becomes the primary implementation.
+This package serves the local viewer for `docs/_meta/*.json` indexes and packet markdown, with the same runtime contract used by the original viewer package while the shadcn/Tailwind shell becomes the primary implementation. Packet copy actions read the primary implementation prompt from `docs/_meta/task-board.json` and use packet markdown only for additional packet detail.
 
 ## Runtime
 
