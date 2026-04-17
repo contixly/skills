@@ -92,18 +92,6 @@ export function WorkspaceHeader({
                   : delivery?.updated_at}
             </span>
           </div>
-          <div className="flex min-h-6 items-end gap-2">
-            <span className="text-xs leading-none tracking-[0.22em] text-muted-foreground uppercase">
-              Source
-            </span>
-            <span className="text-xs leading-none font-medium text-foreground">
-              {shellState === "loading"
-                ? "Loading"
-                : shellState === "unavailable"
-                  ? "Unavailable"
-                  : meta?.source.label}
-            </span>
-          </div>
         </div>
       </CardContent>
     </Card>

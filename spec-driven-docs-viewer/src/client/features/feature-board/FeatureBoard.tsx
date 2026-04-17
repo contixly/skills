@@ -35,12 +35,45 @@ function formatStatusLabel(status: string) {
   return status.replaceAll("-", " ")
 }
 
+function getPriorityRank(priority: string) {
+  switch (priority.toLowerCase()) {
+    case "high":
+      return 0
+    case "medium":
+      return 1
+    case "low":
+      return 2
+    default:
+      return 3
+  }
+}
+
+function compareFeatures(left: FeatureRecord, right: FeatureRecord) {
+  const leftHasBlockingDependencies = left.depends_on.length > 0
+  const rightHasBlockingDependencies = right.depends_on.length > 0
+
+  if (leftHasBlockingDependencies !== rightHasBlockingDependencies) {
+    return leftHasBlockingDependencies ? 1 : -1
+  }
+
+  const priorityDelta =
+    getPriorityRank(left.priority) - getPriorityRank(right.priority)
+
+  if (priorityDelta !== 0) {
+    return priorityDelta
+  }
+
+  return left.title.localeCompare(right.title)
+}
+
 function getFeatureColumns(features: FeatureRecord[]) {
   const seenStatuses = new Set(features.map((feature) => feature.status))
 
   return FEATURE_COLUMN_ORDER.filter((status) => seenStatuses.has(status)).map(
     (status) => ({
-      items: features.filter((feature) => feature.status === status),
+      items: [...features]
+        .filter((feature) => feature.status === status)
+        .sort(compareFeatures),
       status,
     })
   )

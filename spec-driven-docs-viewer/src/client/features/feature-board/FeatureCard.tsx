@@ -10,6 +10,10 @@ import {
 } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import type { FeatureRecord } from "@/shared/contracts"
+import {
+  FeatureMetadataBadges,
+  renderPriorityValue,
+} from "./feature-metadata-badges"
 import { getStatusTheme } from "./status-theme"
 
 function formatStatusLabel(status: string) {
@@ -87,28 +91,13 @@ export function FeatureCard({
           <CardTitle className="pr-10 leading-5">{feature.title}</CardTitle>
           <CardDescription>{subtitle}</CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
-          <Badge
-            variant="outline"
-            className="font-mono tracking-[0.08em] text-[0.6rem]"
-          >
-            {feature.id}
-          </Badge>
-          <Badge
-            variant="secondary"
-            className="border-transparent bg-[oklch(0.92_0.012_85)] font-semibold tracking-[0.16em] text-[oklch(0.36_0.01_85)] uppercase"
-          >
-            {feature.version.toUpperCase()}
-          </Badge>
-          <Badge
-            variant="secondary"
-            className="border-transparent bg-muted/65 text-muted-foreground"
-          >
-            {feature.module}
-          </Badge>
+        <CardContent>
+          <FeatureMetadataBadges feature={feature} />
         </CardContent>
         <CardFooter className="flex flex-wrap gap-2 pt-0 text-[0.625rem] tracking-[0.18em] text-muted-foreground uppercase">
-          <span>Priority {feature.priority}</span>
+          <span>
+            Priority <span>{renderPriorityValue(feature.priority)}</span>
+          </span>
           <span>Ready {feature.packet_counts?.ready ?? 0}</span>
         </CardFooter>
       </Card>

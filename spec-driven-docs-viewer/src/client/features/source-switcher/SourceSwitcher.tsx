@@ -40,11 +40,7 @@ export function SourceSwitcher({
     !meta.availableSources ||
     meta.availableSources.length === 0
   ) {
-    return (
-      <div className="flex items-center gap-2">
-        <Badge variant="outline">{meta?.source.label ?? "Workspace"}</Badge>
-      </div>
-    )
+    return null
   }
 
   return (

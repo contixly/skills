@@ -1,13 +1,9 @@
 import { IconAlertCircle, IconLayoutSidebarRightExpand } from "@tabler/icons-react"
 
+import { FeatureMetadataBadges } from "@/client/features/feature-board/feature-metadata-badges"
 import { PacketBoard } from "@/client/features/packet-board/PacketBoard"
 import { PacketDetail } from "@/client/features/packet-detail/PacketDetail"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
 import {
   Empty,
   EmptyDescription,
@@ -63,6 +59,11 @@ export function FeatureInspector({
 }) {
   const inspectorDescription =
     feature?.id ?? "Choose a card to inspect packets and copy the next prompt."
+  const dependencySummary = feature
+    ? feature.depends_on.length > 0
+      ? `Depends on ${feature.depends_on.join(", ")}`
+      : "No upstream dependencies recorded."
+    : inspectorDescription
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -70,12 +71,13 @@ export function FeatureInspector({
         side="right"
         className="tracker-sheet-content tracker-overlay-surface overflow-y-auto p-0 data-[side=right]:w-[min(72rem,calc(100vw-2rem))] data-[side=right]:sm:max-w-none"
       >
-        <SheetHeader className="gap-4 border-b border-border/70 px-8 pt-8 pb-5">
+        <SheetHeader className="gap-3 border-b border-border/70 px-8 pt-8 pb-5">
           <div className="tracker-kicker">Detail surface</div>
           <SheetTitle>{feature?.title ?? "Select a feature"}</SheetTitle>
-          <SheetDescription>{inspectorDescription}</SheetDescription>
+          {feature ? <FeatureMetadataBadges feature={feature} includePriority /> : null}
+          <SheetDescription>{dependencySummary}</SheetDescription>
         </SheetHeader>
-        <div className="flex flex-col gap-5 px-8 pt-5 pb-8">
+        <div className="flex flex-col gap-5 px-8 pt-4 pb-8">
           <InspectorContent
             copyState={copyState}
             error={error}
@@ -153,21 +155,6 @@ function InspectorContent({
 
   return (
     <>
-      <Card size="sm" className="tracker-panel tracker-panel-strong">
-        <CardContent className="flex flex-col gap-3 pt-3">
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="outline">{feature.id}</Badge>
-            <Badge variant="secondary">{feature.version}</Badge>
-            <Badge variant="secondary">{feature.module}</Badge>
-            <Badge variant="outline">{feature.priority}</Badge>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            {feature.depends_on.length > 0
-              ? `Depends on ${feature.depends_on.join(", ")}`
-              : "No upstream dependencies recorded."}
-          </p>
-        </CardContent>
-      </Card>
       <section className="flex flex-col gap-3">
         <div className="flex items-center justify-between gap-2">
           <h2 className="tracker-kicker">Packets</h2>

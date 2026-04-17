@@ -108,6 +108,99 @@ describe("viewer surface contrast", () => {
     ).toHaveClass("bg-muted/65", "text-muted-foreground", "border-transparent")
   })
 
+  test("sorts lane cards with unblocked high-priority features first", () => {
+    stubResizeObserver()
+    const feature = createFeature()
+
+    const { container } = render(
+      <FeatureBoard
+        error={null}
+        features={[
+          {
+            ...feature,
+            id: "blocked-high",
+            title: "Blocked High",
+            status: "planned",
+            priority: "high",
+            depends_on: ["dep-a"],
+          },
+          {
+            ...feature,
+            id: "free-medium",
+            title: "Free Medium",
+            status: "planned",
+            priority: "medium",
+            depends_on: [],
+          },
+          {
+            ...feature,
+            id: "free-high",
+            title: "Free High",
+            status: "planned",
+            priority: "high",
+            depends_on: [],
+          },
+          {
+            ...feature,
+            id: "blocked-low",
+            title: "Blocked Low",
+            status: "planned",
+            priority: "low",
+            depends_on: ["dep-b"],
+          },
+        ]}
+        isLoading={false}
+        selectedFeatureId={null}
+        onSelectFeature={() => undefined}
+      />
+    )
+
+    const plannedLane = within(container)
+      .getByRole("heading", { name: "planned" })
+      .closest("section")
+
+    expect(plannedLane).not.toBeNull()
+    expect(
+      within(plannedLane as HTMLElement)
+        .getAllByRole("button")
+        .map((button) => button.textContent)
+    ).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("Free High"),
+        expect.stringContaining("Free Medium"),
+        expect.stringContaining("Blocked High"),
+        expect.stringContaining("Blocked Low"),
+      ])
+    )
+    expect(
+      within(plannedLane as HTMLElement)
+        .getAllByRole("button")
+        .map((button) => button.textContent?.includes("Free High"))
+        .indexOf(true)
+    ).toBe(0)
+    expect(
+      within(plannedLane as HTMLElement)
+        .getAllByRole("button")
+        .map((button) => button.textContent?.includes("Free Medium"))
+        .indexOf(true)
+    ).toBe(1)
+  })
+
+  test("highlights only the HIGH priority word in the feature footer", () => {
+    const feature = createFeature()
+
+    const { container } = render(
+      <FeatureCard feature={feature} onSelect={() => undefined} selected={false} />
+    )
+
+    const cardButton =
+      within(container).getAllByRole("button", { name: /shared spec editing/i })[0]
+    const highWord = within(cardButton).getByText("high", { exact: false })
+
+    expect(highWord).toHaveClass("text-[oklch(0.52_0.14_28)]", "font-semibold")
+    expect(highWord.parentElement?.parentElement).toHaveTextContent("Priority HIGH")
+  })
+
   test("uses pastel status accents for board columns and feature status badges", () => {
     const feature = createFeature()
     stubResizeObserver()
@@ -132,7 +225,7 @@ describe("viewer surface contrast", () => {
       </>
     )
 
-    const plannedColumn = screen
+    const plannedColumn = within(container)
       .getByRole("heading", { name: "planned" })
       .closest("header")
     const plannedDot = plannedColumn?.querySelector("span[aria-hidden='true']")
@@ -350,9 +443,35 @@ describe("viewer surface contrast", () => {
       screen.getByText("Detail surface").closest("[data-slot='sheet-content']")
     ).toHaveClass("tracker-overlay-surface")
     expect(
-      screen
-        .getByText("Depends on realtime-foundation")
-        .closest("[data-slot='card']")
-    ).toHaveClass("tracker-panel-strong")
+      screen.getByText("Depends on realtime-foundation")
+    ).toBeInTheDocument()
+
+    const header = screen.getByText("Detail surface").closest("[data-slot='sheet-header']")
+
+    expect(header).toBeTruthy()
+    expect(
+      within(header as HTMLElement).getByText("smart-sync", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveClass("font-mono", "tracking-[0.08em]")
+    expect(
+      within(header as HTMLElement).getByText("V1", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveClass("font-semibold", "uppercase", "border-transparent")
+    expect(
+      within(header as HTMLElement).getByText("collaboration", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveClass("bg-muted/65", "text-muted-foreground", "border-transparent")
+    expect(
+      within(header as HTMLElement).getByText("HIGH")
+    ).toHaveClass("font-semibold")
+    expect(
+      within(header as HTMLElement).getByText("HIGH").closest("[data-slot='badge']")
+    ).toBeTruthy()
+    expect(
+      screen.getByText("Depends on realtime-foundation").closest("[data-slot='card']")
+    ).toBeNull()
   })
 })

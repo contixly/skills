@@ -106,7 +106,7 @@ describe("viewer chrome contrast", () => {
     ).toHaveAttribute("src", "/logo.svg")
   })
 
-  test("aligns updated and source metadata to the same baseline with matching type scale", () => {
+  test("keeps updated metadata aligned in the header without a source row", () => {
     const workspace = createWorkspace()
 
     const { container } = render(
@@ -123,17 +123,15 @@ describe("viewer chrome contrast", () => {
     const headerCard = container.querySelector("[data-slot='card']")
     const headerWithin = within(headerCard as HTMLElement)
     const updatedRow = headerWithin.getByText("Updated").closest("div")
-    const sourceRow = headerWithin.getByText("Source").closest("div")
 
     expect(headerCard).not.toBeNull()
     expect(updatedRow).toHaveClass("items-end")
-    expect(sourceRow).toHaveClass("items-end")
     expect(headerWithin.getByText("Updated")).toHaveClass("text-xs", "leading-none")
-    expect(headerWithin.getByText("Source")).toHaveClass("text-xs", "leading-none")
     expect(headerWithin.getByText("2026-04-17")).toHaveClass("text-xs", "leading-none")
+    expect(headerWithin.queryAllByText("Source")).toHaveLength(0)
     expect(
-      headerWithin.getByText("Runtime docs", { selector: "span" })
-    ).toHaveClass("text-xs", "leading-none")
+      headerWithin.queryAllByText("Runtime docs", { selector: "span" })
+    ).toHaveLength(0)
   })
 
   test("does not duplicate the health status badge in the header", () => {
@@ -207,6 +205,25 @@ describe("viewer chrome contrast", () => {
     expect(
       screen.getByRole("combobox", { name: "Workspace source" })
     ).toHaveClass("tracker-control")
+  })
+
+  test("hides the runtime source badge when source switching is unavailable", () => {
+    const runtimeMeta = {
+      ...createWorkspace().meta,
+      availableSources: undefined,
+      mode: "runtime" as const,
+    }
+
+    const { container } = render(
+      <SourceSwitcher
+        meta={runtimeMeta}
+        shellState="ready"
+        onChange={() => undefined}
+      />
+    )
+
+    expect(container).toBeEmptyDOMElement()
+    expect(screen.queryAllByText("Workspace")).toHaveLength(0)
   })
 
   test("hides the idle source kind badge in dev mode", () => {
