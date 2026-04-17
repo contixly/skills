@@ -18,7 +18,7 @@ Build AI-ready project documentation in `docs/` for spec-driven development, roa
 Install after publishing to a skills-compatible repository:
 
 ```bash
-npx skills add <owner/repo> --skill spec-driven-docs
+npx skills add https://github.com/contixly/skills --skill spec-driven-docs
 ```
 
 Invoke it with a request like:
