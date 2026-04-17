@@ -15,22 +15,9 @@ import type {
   WorkspaceSnapshotMeta,
 } from "@/shared/contracts"
 
-function getHealthVariant(level: WorkspaceHealth["level"] | null) {
-  if (level === "warning") {
-    return "outline"
-  }
-
-  if (level === "error") {
-    return "destructive"
-  }
-
-  return "secondary"
-}
-
 export function WorkspaceHeader({
   commandPalette,
   delivery,
-  health,
   meta,
   shellState,
   sourceSwitcher,
@@ -75,21 +62,16 @@ export function WorkspaceHeader({
         <div className="flex flex-wrap items-center gap-2">
           {shellState === "loading" ? (
             <>
-              <Skeleton className="h-5 w-20 rounded-full" />
               <Skeleton className="h-5 w-24 rounded-full" />
               <Skeleton className="h-5 w-20 rounded-full" />
             </>
           ) : shellState === "unavailable" ? (
             <>
-              <Badge variant="destructive">UNAVAILABLE</Badge>
               <Badge variant="outline">REVISION UNAVAILABLE</Badge>
               <Badge variant="outline">MODE UNAVAILABLE</Badge>
             </>
           ) : (
             <>
-              <Badge variant={getHealthVariant(health?.level ?? null)}>
-                {health?.level.toUpperCase() ?? "UNKNOWN"}
-              </Badge>
               <Badge variant="outline">REVISION {meta?.revision ?? "?"}</Badge>
               <Badge variant="outline">
                 MODE {(meta?.mode ?? "runtime").toUpperCase()}

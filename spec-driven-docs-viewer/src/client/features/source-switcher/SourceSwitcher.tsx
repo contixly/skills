@@ -30,7 +30,6 @@ export function SourceSwitcher({
   if (shellState === "unavailable") {
     return (
       <div className="flex items-center gap-2">
-        <span className="tracker-kicker">Source</span>
         <Badge variant="destructive">UNAVAILABLE</Badge>
       </div>
     )
@@ -43,7 +42,6 @@ export function SourceSwitcher({
   ) {
     return (
       <div className="flex items-center gap-2">
-        <span className="tracker-kicker">Source</span>
         <Badge variant="outline">{meta?.source.label ?? "Workspace"}</Badge>
       </div>
     )
@@ -51,7 +49,6 @@ export function SourceSwitcher({
 
   return (
     <div className="flex items-center gap-2">
-      <span className="tracker-kicker">Source</span>
       <Select
         disabled={isSwitchingSource}
         value={meta.source.id}
@@ -74,13 +71,11 @@ export function SourceSwitcher({
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Badge variant={sourceError ? "destructive" : "secondary"}>
-        {sourceError
-          ? "SWITCH FAILED"
-          : isSwitchingSource
-            ? "SWITCHING"
-            : meta.source.kind.toUpperCase()}
-      </Badge>
+      {(sourceError || isSwitchingSource) && (
+        <Badge variant={sourceError ? "destructive" : "secondary"}>
+          {sourceError ? "SWITCH FAILED" : "SWITCHING"}
+        </Badge>
+      )}
     </div>
   )
 }

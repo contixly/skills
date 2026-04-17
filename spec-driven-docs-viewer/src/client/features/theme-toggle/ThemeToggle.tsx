@@ -13,8 +13,8 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
       title={isDark ? "Switch to light theme" : "Switch to dark theme"}
       variant="outline"
-      size="icon-sm"
-      className="tracker-control"
+      size="icon"
+      className="tracker-control h-10 w-10"
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? <IconSun /> : <IconMoon />}

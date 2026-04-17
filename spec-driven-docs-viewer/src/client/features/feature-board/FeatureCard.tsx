@@ -88,9 +88,24 @@ export function FeatureCard({
           <CardDescription>{subtitle}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
-          <Badge variant="outline">{feature.id}</Badge>
-          <Badge variant="secondary">{feature.version}</Badge>
-          <Badge variant="secondary">{feature.module}</Badge>
+          <Badge
+            variant="outline"
+            className="font-mono tracking-[0.08em] text-[0.6rem]"
+          >
+            {feature.id}
+          </Badge>
+          <Badge
+            variant="secondary"
+            className="border-transparent bg-[oklch(0.92_0.012_85)] font-semibold tracking-[0.16em] text-[oklch(0.36_0.01_85)] uppercase"
+          >
+            {feature.version.toUpperCase()}
+          </Badge>
+          <Badge
+            variant="secondary"
+            className="border-transparent bg-muted/65 text-muted-foreground"
+          >
+            {feature.module}
+          </Badge>
         </CardContent>
         <CardFooter className="flex flex-wrap gap-2 pt-0 text-[0.625rem] tracking-[0.18em] text-muted-foreground uppercase">
           <span>Priority {feature.priority}</span>

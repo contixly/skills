@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest"
 import React from "react"
 import { render, screen, within } from "@testing-library/react"
-import { describe, expect, test } from "vitest"
+import { afterEach, describe, expect, test, vi } from "vitest"
 
 import { FeatureBoard } from "@/client/features/feature-board/FeatureBoard"
 import { FeatureCard } from "@/client/features/feature-board/FeatureCard"
@@ -45,6 +45,21 @@ function createPacketVariant(
   }
 }
 
+function stubResizeObserver() {
+  class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+
+  vi.stubGlobal("ResizeObserver", ResizeObserver)
+}
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+  vi.restoreAllMocks()
+})
+
 describe("viewer surface contrast", () => {
   test("applies accent-surface only to selected feature cards", () => {
     const feature = createFeature()
@@ -70,8 +85,32 @@ describe("viewer surface contrast", () => {
     ).toHaveClass("tracker-accent-surface")
   })
 
+  test("gives feature id, version, and module distinct badge treatments", () => {
+    const feature = createFeature()
+
+    const { container } = render(
+      <FeatureCard feature={feature} onSelect={() => undefined} selected={false} />
+    )
+
+    const cardButton =
+      within(container).getAllByRole("button", { name: /shared spec editing/i })[0]
+
+    expect(
+      within(cardButton).getByText("smart-sync", { selector: "[data-slot='badge']" })
+    ).toHaveClass("font-mono", "tracking-[0.08em]")
+    expect(
+      within(cardButton).getByText("V1", { selector: "[data-slot='badge']" })
+    ).toHaveClass("font-semibold", "uppercase", "border-transparent")
+    expect(
+      within(cardButton).getByText("collaboration", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveClass("bg-muted/65", "text-muted-foreground", "border-transparent")
+  })
+
   test("uses pastel status accents for board columns and feature status badges", () => {
     const feature = createFeature()
+    stubResizeObserver()
 
     const { container } = render(
       <>
@@ -120,6 +159,7 @@ describe("viewer surface contrast", () => {
 
   test("uses lightweight column dividers instead of boxed lane cards", () => {
     const feature = createFeature()
+    stubResizeObserver()
 
     const { container } = render(
       <FeatureBoard
@@ -156,6 +196,74 @@ describe("viewer surface contrast", () => {
     expect(readyLane).not.toBeNull()
     expect(plannedLane).not.toHaveClass("rounded-lg", "border", "bg-muted/15")
     expect(readyLane).toHaveClass("border-l", "border-border/60")
+  })
+
+  test("caps board lane width so sparse status sets do not stretch cards", () => {
+    const feature = createFeature()
+    stubResizeObserver()
+
+    const { container } = render(
+      <FeatureBoard
+        error={null}
+        features={[
+          {
+            ...feature,
+            id: "planned-feature",
+            status: "planned",
+            title: "Planned Feature",
+          },
+          {
+            ...feature,
+            id: "ready-feature",
+            status: "ready",
+            title: "Ready Feature",
+          },
+        ]}
+        isLoading={false}
+        selectedFeatureId={null}
+        onSelectFeature={() => undefined}
+      />
+    )
+
+    const boardWithin = within(container)
+    const plannedLane = boardWithin
+      .getByRole("heading", { name: "planned" })
+      .closest("section")
+    const readyLane = boardWithin
+      .getByRole("heading", { name: "ready" })
+      .closest("section")
+
+    expect(plannedLane).not.toBeNull()
+    expect(readyLane).not.toBeNull()
+    expect(plannedLane).toHaveClass("flex-none", "w-[18rem]", "max-w-[18rem]")
+    expect(readyLane).toHaveClass("flex-none", "w-[18rem]", "max-w-[18rem]")
+  })
+
+  test("renders a horizontal scrollbar for wide feature boards", () => {
+    const feature = createFeature()
+    stubResizeObserver()
+
+    const { container } = render(
+      <FeatureBoard
+        error={null}
+        features={[
+          { ...feature, id: "planned-feature", status: "planned", title: "Planned Feature" },
+          { ...feature, id: "ready-feature", status: "ready", title: "Ready Feature" },
+          { ...feature, id: "progress-feature", status: "in-progress", title: "In Progress Feature" },
+          { ...feature, id: "blocked-feature", status: "blocked", title: "Blocked Feature" },
+          { ...feature, id: "done-feature", status: "done", title: "Done Feature" },
+        ]}
+        isLoading={false}
+        selectedFeatureId={null}
+        onSelectFeature={() => undefined}
+      />
+    )
+
+    expect(
+      container.querySelector(
+        '[data-slot="scroll-area-scrollbar"][data-orientation="horizontal"]'
+      )
+    ).not.toBeNull()
   })
 
   test("keeps packet selection accent-surface scoped to the selected packet", () => {

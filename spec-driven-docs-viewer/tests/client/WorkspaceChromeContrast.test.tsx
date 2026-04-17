@@ -136,11 +136,37 @@ describe("viewer chrome contrast", () => {
     ).toHaveClass("text-xs", "leading-none")
   })
 
-  test.each([
-    ["ok", "secondary"],
-    ["warning", "outline"],
-    ["error", "destructive"],
-  ])("maps health level %s to %s badge variant in the summary", (level, variant) => {
+  test("does not duplicate the health status badge in the header", () => {
+    const workspace = createWorkspace()
+
+    const { container } = render(
+      <WorkspaceHeader
+        commandPalette={<button type="button">Jump to feature or packet</button>}
+        delivery={workspace.delivery}
+        health={workspace.health}
+        meta={workspace.meta}
+        shellState="ready"
+        sourceSwitcher={<div>Runtime docs</div>}
+      />
+    )
+
+    const headerCard = container.querySelector("[data-slot='card']")
+
+    expect(headerCard).not.toBeNull()
+    expect(
+      within(headerCard as HTMLElement).getByText("REVISION 7")
+    ).toBeInTheDocument()
+    expect(within(headerCard as HTMLElement).getByText("MODE DEV")).toBeInTheDocument()
+    expect(
+      within(headerCard as HTMLElement).queryAllByText("OK", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveLength(0)
+  })
+
+  test.each(["ok", "warning", "error"])(
+    "shows health level %s as the primary summary value without a badge",
+    (level) => {
     const workspace = createWorkspace()
     workspace.health = { level: level as "ok" | "warning" | "error", messages: [] }
 
@@ -158,10 +184,13 @@ describe("viewer chrome contrast", () => {
 
     expect(healthCard).not.toBeNull()
     expect(
-      within(healthCard as HTMLElement).getByText(level.toUpperCase(), {
+      within(healthCard as HTMLElement).getByText(level.toUpperCase())
+    ).toHaveClass("text-sm")
+    expect(
+      within(healthCard as HTMLElement).queryAllByText(level.toUpperCase(), {
         selector: "[data-slot='badge']",
       })
-    ).toHaveAttribute("data-variant", variant)
+    ).toHaveLength(0)
   })
 
   test("keeps source switching aligned with the stronger header controls", () => {
@@ -178,5 +207,40 @@ describe("viewer chrome contrast", () => {
     expect(
       screen.getByRole("combobox", { name: "Workspace source" })
     ).toHaveClass("tracker-control")
+  })
+
+  test("hides the idle source kind badge in dev mode", () => {
+    const workspace = createWorkspace()
+
+    render(
+      <SourceSwitcher
+        meta={workspace.meta}
+        shellState="ready"
+        onChange={() => undefined}
+      />
+    )
+
+    expect(
+      screen.getAllByRole("combobox", { name: "Workspace source" }).length
+    ).toBeGreaterThan(0)
+    expect(screen.queryAllByText("FIXTURE")).toHaveLength(0)
+    expect(screen.queryAllByText("WORKSPACE")).toHaveLength(0)
+  })
+
+  test("hides the source label in the header switcher", () => {
+    const workspace = createWorkspace()
+
+    const { container } = render(
+      <SourceSwitcher
+        meta={workspace.meta}
+        shellState="ready"
+        onChange={() => undefined}
+      />
+    )
+
+    expect(
+      within(container).getAllByRole("combobox", { name: "Workspace source" }).length
+    ).toBeGreaterThan(0)
+    expect(within(container).queryAllByText("Source")).toHaveLength(0)
   })
 })

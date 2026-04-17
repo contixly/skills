@@ -88,7 +88,7 @@ export function FeatureBoard({
             {Array.from({ length: 4 }, (_, index) => (
               <div
                 key={index}
-                className="flex min-w-[16rem] flex-1 flex-col gap-3 rounded-lg border border-border/70 bg-muted/20 p-3"
+                className="flex w-[18rem] max-w-[18rem] flex-none flex-col gap-3 rounded-lg border border-border/70 bg-muted/20 p-3"
               >
                 <Skeleton className="h-4 w-24" />
                 {Array.from({ length: 3 }, (_, cardIndex) => (
@@ -98,7 +98,7 @@ export function FeatureBoard({
             ))}
           </div>
         ) : columns.length > 0 ? (
-          <ScrollArea className="h-full w-full">
+          <ScrollArea className="h-full w-full" type="always">
             <section
               aria-label="Feature board"
               className="flex w-max min-w-full gap-0 pb-3 pr-3"
@@ -110,7 +110,7 @@ export function FeatureBoard({
                 <section
                   key={column.status}
                   aria-labelledby={`feature-column-${column.status}`}
-                  className="flex min-w-[17rem] flex-1 basis-0 flex-col gap-3 border-l border-border/60 px-3 first:border-l-0 first:pl-0 last:pr-0"
+                  className="flex w-[18rem] max-w-[18rem] flex-none flex-col gap-3 border-l border-border/60 px-3 first:border-l-0 first:pl-0 last:pr-0"
                 >
                   <header className="flex items-center justify-between gap-2 border-b border-border/70 pb-2">
                     <div className="flex items-center gap-2">

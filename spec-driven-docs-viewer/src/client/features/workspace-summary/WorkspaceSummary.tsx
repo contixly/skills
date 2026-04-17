@@ -1,7 +1,5 @@
-import { Badge } from "@/components/ui/badge"
 import {
   Card,
-  CardAction,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -12,18 +10,6 @@ type SummaryMetric = {
   description: string
   label: string
   value: string
-}
-
-function getHealthVariant(level: string) {
-  if (level === "warning") {
-    return "outline"
-  }
-
-  if (level === "error") {
-    return "destructive"
-  }
-
-  return "secondary"
 }
 
 function buildSummaryMetrics(args: {
@@ -129,19 +115,6 @@ export function WorkspaceSummary({
           size="sm"
         >
           <CardHeader>
-            <CardAction>
-              {metric.label === "HEALTH" && shellState !== "loading" ? (
-                <Badge
-                  variant={
-                    shellState === "unavailable"
-                      ? "destructive"
-                      : getHealthVariant(workspace?.health.level ?? "ok")
-                  }
-                >
-                  {metric.value}
-                </Badge>
-              ) : null}
-            </CardAction>
             <div className="tracker-kicker">{metric.label}</div>
             <CardTitle className="text-sm">{metric.value}</CardTitle>
             <CardDescription>{metric.description}</CardDescription>

@@ -141,7 +141,11 @@ describe("App", () => {
 
     expect(document.documentElement).toHaveClass("light")
 
-    await user.click(screen.getByRole("button", { name: "Toggle theme" }))
+    const themeToggle = screen.getByRole("button", { name: "Toggle theme" })
+
+    expect(themeToggle).toHaveClass("tracker-control", "h-10")
+
+    await user.click(themeToggle)
 
     expect(document.documentElement).toHaveClass("dark")
   })
@@ -163,6 +167,7 @@ describe("App", () => {
       ],
     })
 
+    stubResizeObserver()
     vi.stubGlobal(
       "fetch",
       vi.fn(async () => new Response(JSON.stringify(workspace)))
