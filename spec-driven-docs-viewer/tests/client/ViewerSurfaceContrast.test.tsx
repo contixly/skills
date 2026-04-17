@@ -1,8 +1,9 @@
 import "@testing-library/jest-dom/vitest"
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { render, screen, within } from "@testing-library/react"
 import { describe, expect, test } from "vitest"
 
+import { FeatureBoard } from "@/client/features/feature-board/FeatureBoard"
 import { FeatureCard } from "@/client/features/feature-board/FeatureCard"
 import { FeatureInspector } from "@/client/features/feature-inspector/FeatureInspector"
 import { PacketBoard } from "@/client/features/packet-board/PacketBoard"
@@ -67,6 +68,54 @@ describe("viewer surface contrast", () => {
     expect(
       cards[1]
     ).toHaveClass("tracker-accent-surface")
+  })
+
+  test("uses pastel status accents for board columns and feature status badges", () => {
+    const feature = createFeature()
+
+    const { container } = render(
+      <>
+        <FeatureBoard
+          error={null}
+          features={[
+            {
+              ...feature,
+              id: "planned-feature",
+              status: "planned",
+              title: "Planned Feature",
+            },
+          ]}
+          isLoading={false}
+          selectedFeatureId={null}
+          onSelectFeature={() => undefined}
+        />
+        <FeatureCard feature={feature} onSelect={() => undefined} selected={false} />
+      </>
+    )
+
+    const plannedColumn = screen
+      .getByRole("heading", { name: "planned" })
+      .closest("header")
+    const plannedDot = plannedColumn?.querySelector("span[aria-hidden='true']")
+
+    expect(plannedColumn).not.toBeNull()
+    expect(plannedDot).not.toBeNull()
+    expect(plannedDot).toHaveClass("bg-[oklch(0.78_0.04_82)]")
+
+    const featureCard = within(container)
+      .getByRole("button", { name: /shared spec editing/i })
+      .querySelector("[data-slot='card']")
+
+    expect(featureCard).not.toBeNull()
+    expect(
+      within(featureCard as HTMLElement).getByText("in progress", {
+        selector: "[data-slot='badge']",
+      })
+    ).toHaveClass(
+      "border-[oklch(0.74_0.03_230)]",
+      "bg-[oklch(0.94_0.015_230)]",
+      "text-[oklch(0.4_0.03_230)]"
+    )
   })
 
   test("keeps packet selection accent-surface scoped to the selected packet", () => {

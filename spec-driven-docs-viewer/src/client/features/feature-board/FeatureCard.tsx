@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import type { FeatureRecord } from "@/shared/contracts"
+import { getStatusTheme } from "./status-theme"
 
 function formatStatusLabel(status: string) {
   return status.replaceAll("-", " ")
@@ -52,6 +53,7 @@ export function FeatureCard({
   selected: boolean
 }) {
   const subtitle = buildFeatureCardSubtitle(feature)
+  const statusTheme = getStatusTheme(feature.status)
 
   return (
     <button
@@ -72,7 +74,13 @@ export function FeatureCard({
       >
         <CardHeader className="gap-2">
           <CardAction>
-            <Badge variant={selected ? "secondary" : "outline"}>
+            <Badge
+              variant="outline"
+              className={cn(
+                "shadow-none",
+                statusTheme.badgeClassName
+              )}
+            >
               {formatStatusLabel(feature.status)}
             </Badge>
           </CardAction>

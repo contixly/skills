@@ -19,6 +19,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
 import type { FeatureRecord, Status } from "@/shared/contracts"
+import { getStatusTheme } from "./status-theme"
 
 const FEATURE_COLUMN_ORDER: Status[] = [
   "planned",
@@ -102,7 +103,10 @@ export function FeatureBoard({
               aria-label="Feature board"
               className="flex w-max min-w-full gap-3 pb-3 pr-3"
             >
-              {columns.map((column) => (
+              {columns.map((column) => {
+                const statusTheme = getStatusTheme(column.status)
+
+                return (
                 <section
                   key={column.status}
                   aria-labelledby={`feature-column-${column.status}`}
@@ -112,7 +116,7 @@ export function FeatureBoard({
                     <div className="flex items-center gap-2">
                       <span
                         aria-hidden="true"
-                        className="size-2 rounded-full bg-chart-2"
+                        className={`size-2 rounded-full ${statusTheme.dotClassName}`}
                       />
                       <h2
                         id={`feature-column-${column.status}`}
@@ -136,7 +140,8 @@ export function FeatureBoard({
                     ))}
                   </div>
                 </section>
-              ))}
+                )
+              })}
             </section>
           </ScrollArea>
         ) : !error ? (
