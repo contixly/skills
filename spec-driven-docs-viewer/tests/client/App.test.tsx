@@ -97,6 +97,8 @@ class MockEventSource {
 afterEach(() => {
   cleanup()
   MockEventSource.instances = []
+  document.documentElement.classList.remove("light", "dark")
+  localStorage.clear()
   vi.unstubAllGlobals()
   vi.restoreAllMocks()
 })
@@ -122,6 +124,26 @@ describe("App", () => {
     expect(screen.getByText("REVISION 42")).toBeInTheDocument()
     expect(screen.getByText("HEALTH")).toBeInTheDocument()
     expect(screen.getByText("BRANCH")).toBeInTheDocument()
+  })
+
+  test("renders a theme toggle in the header and switches between light and dark", async () => {
+    const user = userEvent.setup()
+    const workspace = createWorkspacePayload()
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response(JSON.stringify(workspace)))
+    )
+
+    render(<App />)
+
+    await screen.findByLabelText("Workspace summary")
+
+    expect(document.documentElement).toHaveClass("light")
+
+    await user.click(screen.getByRole("button", { name: "Toggle theme" }))
+
+    expect(document.documentElement).toHaveClass("dark")
   })
 
   test("wraps the board in a dedicated full-height stage after removing the inspector rail", async () => {

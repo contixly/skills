@@ -34,6 +34,7 @@ export function WorkspaceHeader({
   meta,
   shellState,
   sourceSwitcher,
+  themeToggle,
 }: {
   commandPalette: ReactNode
   delivery: DeliveryState | null
@@ -41,6 +42,7 @@ export function WorkspaceHeader({
   meta: WorkspaceSnapshotMeta | null
   shellState: "loading" | "ready" | "unavailable"
   sourceSwitcher: ReactNode
+  themeToggle?: ReactNode
 }) {
   return (
     <Card className="tracker-panel tracker-panel-strong">
@@ -65,6 +67,7 @@ export function WorkspaceHeader({
           <div className="tracker-header-actions">
             {commandPalette}
             {sourceSwitcher}
+            {themeToggle}
           </div>
         </div>
       </CardHeader>

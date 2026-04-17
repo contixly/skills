@@ -12,8 +12,10 @@ import { SourceSwitcher } from "@/client/features/source-switcher/SourceSwitcher
 import { WorkspaceHeader } from "@/client/features/workspace-header/WorkspaceHeader"
 import { WorkspaceShell } from "@/client/features/workspace-shell/WorkspaceShell"
 import { WorkspaceSummary } from "@/client/features/workspace-summary/WorkspaceSummary"
+import { ThemeToggle } from "@/client/features/theme-toggle/ThemeToggle"
+import { ThemeProvider } from "@/components/theme-provider"
 
-export function App() {
+function AppContent() {
   const { isLoading, loadWorkspace, shellState, workspace, workspaceError } =
     useWorkspaceSnapshot()
   const {
@@ -96,6 +98,7 @@ export function App() {
           health={workspace?.health ?? null}
           meta={workspace?.meta ?? null}
           shellState={shellState}
+          themeToggle={<ThemeToggle />}
           sourceSwitcher={
             <SourceSwitcher
               isSwitchingSource={isSwitchingSource}
@@ -144,5 +147,13 @@ export function App() {
         />
       }
     />
+  )
+}
+
+export function App() {
+  return (
+    <ThemeProvider defaultTheme="light">
+      <AppContent />
+    </ThemeProvider>
   )
 }
